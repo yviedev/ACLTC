@@ -5,7 +5,7 @@ Your job is to create Connect Four in Ruby (like the bonus in Phase 2), but this
 Ask yourself the following questions before getting started - what are the different classes you would make here? What are the instance variables? What are the instance methods?
 =end
 
-# draw a 6x6 matrix board
+# draw a 4x4 matrix board
 class Connect_Four
 
     $board = Array.new(4) { Array.new(4, "-") } #why do I have to make this a global variable in order to work?

@@ -5,7 +5,7 @@ Build a tic-tac-toe game on the command line where two human players can play ag
 Try using classes to structure your code. What are the different classes needed here? What are the instance variables? What are the instance methods?
 =end
 
-# draw a 6x6 matrix board
+# draw a 3x3 matrix board
 class Tic_Tac_Toe
 
     $board = Array.new(3) { Array.new(3, "-") } #why do I have to make this a global variable in order to work?
@@ -133,6 +133,7 @@ class Tic_Tac_Toe
     
     def game_over
         # if rows are XXX or OOO, then game over
+        @score = 0
     	$board.each do |row|
     		if row.join == "XXX" || row.join == "OOO"
     			p "TIC-TAC-TOE! GAME OVER. Player #{$player[$current_player_index]} loses!"
@@ -150,6 +151,17 @@ class Tic_Tac_Toe
     	if $board[0][0] == "X" && $board[1][1] == "X" && $board[2][2] == "X" || $board[0][0] == "O" && $board[1][1] == "O" && $board[2][2] == "O" || $board[2][0] == "X" && $board[1][1] == "X" && $board[0][2] == "X" || $board[2][0] == "O" && $board[1][1] == "O" && $board[0][2] == "O"
     	    p "TIC-TAC-TOE! GAME OVER. Player #{$player[$current_player_index]} loses!"
     		exit 
+    	end
+    	$board.each do |row|
+        	row.each do |s|
+        	        if s != "-"
+        	            @score += 1
+        	        end
+        	        if @score == 9
+        	            p "It's a tie. GAME OVER!"
+        	            exit
+        	        end
+    	    end
     	end
     end
     
