@@ -1,0 +1,108 @@
+/*CSS Exercise:
+
+Using JSFiddle, create a brand new webpage to create an About Me page. An About Me page should be about you, and is commonly found on blogs. Use as many HTML elements as you can get your hands on, including three new elements that I have not mentioned in any of the screencasts. Then, go crazy with CSS and dazzle up your page as if it were 1996. You'll probably have to do a decent amount of Googling, but one really useful site for learning HTML and CSS is W3 schools: http://www.w3schools.com.
+
+Exercise:
+
+Save your JSFiddle exercise and post the link below.
+
+After completing this, you may be wondering how to include CSS into your local HTML files. There are several different ways to do this, and Rails takes a different approach than all those ways, so I haven't bothered dealing with this in these screencasts. But if you'd like to do this anyway, see this page to get started: (http://www.w3schools.com/css/css_howto.asp)*/
+
+/*
+<h1>
+About Me
+</h1>
+<h2>
+By: Yvonne Ike
+</h2>
+<p>
+Hi, My name is Yvonne and this is my 'About Me' section. I think talking about myself is a pretty weird thing to do but here goes:
+</p>
+<ol>
+  <li>
+    I was born and raised in Texas.
+  </li>
+  <li>
+    I loved to NY to attend university.
+  </li>
+  <li>
+    I moved to NYC after school and have been here ever since.
+  </li>
+</ol>
+<p>
+So those are the basics, but there is a little more to add. I do have a wide variety of hobbies. Some of those include:
+</p>
+<ol>
+  <ul>
+  Photography
+  </ul>
+  <ul>
+  International Travel
+  </ul>
+  <ul>
+  Visual and Performing Arts
+  </ul>
+</ol>
+  <hr>
+  <p>
+  My favorite season is Fall. I don't like extreme temperatures. I like to go exploring and there is plenty to explore where I live.
+  </p>
+  <p>
+  I have lived in NYC for 12 years and I still have not visited the Statue of Liberty but I have seen the <a href="https://en.wikipedia.org/wiki/Colosseum">Colosseum</a>.<br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome,_Italy_-_April_2007.jpg">
+  </p>
+  <p>
+  I have also seen <a href="https://en.wikipedia.org/wiki/Eiffel_Tower">La Tour Eiffel</a>, but I have not watched a live Yankees game. <br><img src="http://www.everythingdoormats.com/images/products/new-york-yankees-mlb-baseball-round-area-rug.jpg">
+  </p>
+  <p>
+  Presently, I am studying computer programming and I am having a great time learning how to write and build applications. My very first line of code in a language called Ruby, was: <br>
+  <code>
+    <pre>p "Hello World!"</pre>
+  </code>
+  </p>
+  <p>
+  Now I am going to have some CSS fun in making this page look great. Thanks for reading! :-)
+  </p>*/
+  
+  body {
+    background-color: #fff2e6;
+    font-family: georgia
+}
+
+h1 {
+    color: #4d0000;
+    text-align: center;
+    font-family: georgia
+}
+
+h2 {
+    color: #c61aff;
+    text-align: center;
+    font-family: georgia;
+}
+p {
+    color: #7094db;
+    font-family: georgia;
+    font-size: 16px;
+}
+ol
+ {
+    color: #7094db;
+}
+code
+{
+    color: #ff0080;
+}
+img
+{
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+# https://jsfiddle.net/f2kxumsn/
