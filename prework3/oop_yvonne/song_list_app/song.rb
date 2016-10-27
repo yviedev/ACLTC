@@ -29,8 +29,12 @@ class Song
     lyrics
   end
   
+  def info
+    return "You are listening to #{title} by #{artist} which runs for #{friendly_duration}: \n\n#{lyrics}"
+  end
+  
   def friendly_duration
-    return "#{@duration/60} minutes, #{@duration % 60} seconds."
+    return "#{@duration / 60} minutes and #{@duration % 60} seconds"
     #"2 minutes, 30 seconds."
   end
   

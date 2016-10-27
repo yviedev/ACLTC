@@ -19,7 +19,7 @@ class List
   end
   
   def shuffle
-    @songs.shuffle
+    @songs.shuffle!
     play_list
   end
   
