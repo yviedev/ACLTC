@@ -3,7 +3,6 @@ class Song
   def initialize(title, artist, duration, lyrics)
     @title = title
     @artist = artist
-    #@complete = false
     @duration = duration
     @lyrics = lyrics
   end
@@ -30,7 +29,7 @@ class Song
   end
   
   def info
-    return "You are listening to #{title} by #{artist} which runs for #{friendly_duration}: \n\n#{lyrics}"
+    return "You are listening to #{title} by #{artist} which runs for #{friendly_duration}: #{lyrics}"
   end
   
   def friendly_duration

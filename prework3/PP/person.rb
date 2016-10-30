@@ -10,7 +10,7 @@ class Person
         @first_name = first_name
         @last_name = last_name
         @hair_color = hair_color
-        @hobbies = hobbies
+        @hobbies = []
     end
     
     # Person class has 4 getter methods
@@ -43,7 +43,7 @@ class Person
     end
     
     def info
-        return "#{full_name} has #{@hair_color} hair and enjoys the following hobbies: #{hobbies.join(", ")}. #{first_name}'s email address is #{email}."
+        return "#{full_name} has #{@hair_color} hair and enjoys the following hobbies: #{hobbies}. #{first_name}'s email address is #{email}."
     end
 end
 

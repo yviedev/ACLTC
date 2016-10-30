@@ -4,6 +4,7 @@ require_relative "song"
 # Create list
 list = List.new
 
+=begin
 # Create songs and add them to the list
 list.add_song(Song.new("Broccoli", "D.R.A.M.", 225, "[Intro: D.R.A.M.]
 Ain't no tellin' what I'm finna be on (ayy, ayy)
@@ -213,9 +214,9 @@ I love my big booty boos
 My life a Godfather picture
 Local club in my city
 I fell in love with a stripper
-boos know I'm that nigga
+boos know I'm that dude
 Talkin four door Bugatti
-I'm the life of the party let's get these hoes on the Molly
+I'm the life of the party let's get these people on the Molly
 You know I came to stunt
 So drop that meow boo
 I got what you want
@@ -224,13 +225,13 @@ Film it, film it
 This boo want me to film it
 Ballin', ballin' like I play for New England
 Spend it, spend it, spend a stack every minute
-That's 50, 100, I see no fucking limits
+That's 50, 100, I see no  limits
 Shout out to Uncle Luke
 Shout out my boos too
 We the 2 Live Crew
 2 for me, 2 for you
 Feed them boos carrots
-Fuck 'em like a rabbit
+Forget 'em like a rabbit
 Sorry that's a habit
 Smoke a spliff and then I vanish
 
@@ -238,10 +239,10 @@ Work, work, work, work, bounce [x4]
 What you twerkin' with [x4]
 
 I'm about being single, seeing double, making triple (right)
-I hope you meow niggas hating never make a nickel
+I hope you meow dudes hating never make a nickel
 It's good to make it better when your people make it with you
 Money coming, money going, ain't like you can take it with you
-It's about to be a hit right now, fuck back then, we the stuff right now
+It's about to be a hit right now, forget back then, we the stuff right now
 Dropped 'Take Care', bought a another crib
 And I'm picking up the keys to the boo right now
 OVO that's major stuff, Toronto with me that's Mayor stuff
@@ -249,7 +250,7 @@ Gettin cheddar packs like KD, OKC that's playa stuff
 We don't dress alike, we don't rap alike
 I shine different, I rhyme different
 Only thing you got is some years on me
-Man, fuck you and your time difference
+Man, forget you and your time difference
 I'm young Papi, champagne
 They know the face, and they know the name
 Got one watch that could probably pay for like all your chains
@@ -263,13 +264,13 @@ But we always been the type of crew that been good without a plan B
 Work, work, work, work, bounce [x4]
 What you twerkin' with [x4]
 
-Biiiitch, Stop talkin' that stuff
-And suck a nigga dick for some Trukfit
-Okay I fuck a boo and I'm gone
+Stop talkin' that stuff
+And suck a dude for some Trukfit
+Okay I forget a boo and I'm gone
 That's gangsta Al Capone
 I make that meow spit like bone
 Talkin' bout Bone, bone, bone, bone
-I'm fucking with' French, excuse my French
+I'm messin' with' French, excuse my French
 I lose my mind before I lose my boo
 Money ain't a thing but a chicken wing
 Boo I ball like 2 eyelids
@@ -281,14 +282,14 @@ On my pro-active stuff
 Pop that meow like a zit
 I go by the name Lil Tunechi
 Your girl is a groupie
-And nigga, you's a square
+And dude, you's a square
 And I would twist you like a rubix
-Motherfucker I'm on my skateboard
+Dude I'm on my skateboard
 Watch me do a trick hoe
 I'm 5′ 5\"\ but I could 6-9
 Then beat that meow like Klitschko
-It's French Montana, fuck joe
-It's Weezy F, fuck hoes
+It's French Montana, forget joe
+It's Weezy F, forget people
 It's Truk the world
 It's Truk yo girl
 It's Trukfit by the truck load, biaaaatch
@@ -299,6 +300,7 @@ What you twerkin' with [x4]
 Oh yeah, I forgot -
 YOUNG MULA BABYYYYYYYY
 "))
+
 
 # Play list before shuffle
 puts "Here is your playlist:"
@@ -314,8 +316,9 @@ puts "--------"
 puts list.duration_list
 puts "--------"
 
-#Print info about the first song
+#Play the first song
 puts list.songs[1].play_song
 
-
-#p list.songs[0]
+#Play list
+puts list.play_list
+=end
