@@ -37,32 +37,27 @@ store_items.each do |item|
   puts "This store has #{item[:name]}. It is a #{item[:type]} and it cost $#{item["price"]}."
 end
 
+p "----------"
+
 =begin
 Rewrite your store items using a class instead of a hash.
 a) Note: that attr_reader is a shortcut that Ruby provides. For this exercise, don’t use attr_reader - instead write out the equivalent methods in your class.
 b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
 =end
 
+=begin 
+Open the store_item.rb file you created from the previous lesson.
+Some of your store items are food, which have a shelf life. Create a class called Food which inherits from your original class and has an additional property of shelf_life.
+=end
+
 class StoreItems
   
-  #attr_reader :name, :price, :type
+  attr_reader :name, :price, :type
 
-  def initialize (input_name, input_price, input_type)
-    @name = input_name
-    @price = input_price
-    @type = input_type
-  end
-
-  def name
-    @name
-  end
-
-  def price
-    @price
-  end
-
-  def type
-    @type
+  def initialize (input_info)
+    @name = input_info[:name]
+    @price = input_info[:price]
+    @type = input_info[:type]
   end
 
   def info
@@ -71,11 +66,24 @@ class StoreItems
 
 end
 
-p store_item1 = StoreItems.new("apple", 5, "fruit")
+class Food < StoreItems
 
-p store_item1.name
+  attr_reader :shelf_life
 
-store_item1.info
+  def initialize (input_info)
+    super
+    @shelf_life = input_info[:shelf_life]
+  end 
+
+end
+
+p food1 = Food.new(name:"apple", price: 5, type: "fruit", shelf_life: "5 days")
+
+#p store_item1
+
+#store_item1.info
+
+p "----------"
 
 # Rewrite your store items using a class with a single options hash in the initialize method.
 

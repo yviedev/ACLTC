@@ -6,6 +6,14 @@
 Bonus: Read more about inheritance and object hierarchy in Ruby here: https://www.leighhalliday.com/object-hierarchy-in-ruby
 =end
 
+=begin 
+(done) Open the inheritance_example.rb file from the previous example.
+
+(done) Add car specific attributes to the Car class (fuel, make, model, etc.) and bicycle specific attributes to the Bicycle class (speed, type, weight, etc.). Use the super method to keep the initialize methods DRY.
+
+Bonus: Read about the differences between redefining, overriding, and super. Complete the exercise at the end to get the tests to pass: https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/37-classes-inheritance/lessons/88-redefining-overriding-and-super
+=end
+
 class Parts
   # Common stuff between Car and Bike
   attr_reader :speed, :direction
@@ -30,7 +38,9 @@ end
 class Car < Parts
   def initialize
     super
-    @gas = 10
+    @fuel = 10
+    @make = "Honda"
+    @model = "Accord"
   end
 
   def honk_horn
@@ -41,11 +51,19 @@ class Car < Parts
     super # Will increase by 10 because reading the method from the Parts class. If super is not there it will only increase by 25.
     @speed += 25
   end
+
 end
 
 p car1 = Car.new
 
 class Bike < Parts
+  def initialize
+    super
+    @speed = 10
+    @type = "hybrid"
+    @weight = 20
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
@@ -59,6 +77,10 @@ p bike1.turn("right")
 
 car1.honk_horn
 p car1.brake
-p car1.accelerate
+#p car1.accelerate
+
+p car1
+
+p bike1
 
 
