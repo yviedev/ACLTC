@@ -10,7 +10,7 @@
 - Matt
 - David
 - Dan
-- Jigmee
+- Jigmey
 - Joel
 
 ##High-level Overview:
