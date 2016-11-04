@@ -93,6 +93,7 @@ spaces confuse terminal
 ###Exercises
 <http://codekata.com/kata/kata04-data-munging/>
 ***
+
 #Date: 10-31-2016
 #pair programming
 #sit in a new seat
@@ -131,6 +132,7 @@ My boss wants me to keep track of two employees using ruby code. They have 4 pie
     + employee2.full_name should return “Danilo Campos, Esquire”
     + Rewrite the initialize method to provide default values if they are missing from the options hash.
 ***
+
 #Date: 11-1-2016
 #notes
 - stop writing 12 lines of code before running it.
@@ -179,6 +181,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 ###Class Code
 <https://gist.github.com/riceb53/f009eab172d09c862618bd117f913614>
 ***
+
 #Date: 11-2-2016
 ###Modules
 * anyone who can perform the functions of the module can use it.
@@ -223,8 +226,9 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - Overall Ruby review
 - Explain pair programming (check-in, driver, navigator)
 - Share Whirlwind Ruby exercises, students work in pairs <https://docs.google.com/document/d/1Z7DaCGEwPKQOQptvBD8jd_XCSMkPBc1fW-igdZcj6a8/edit> 
-- Share OOP exercise <https://gist.github.com/peterxjang/0164f3426579fef3128a> 
+- Share OOP exercise <https://gist.github.com/peterxjang/0164f3426579fef3128a>
 ***
+
 #Date: 11-3-2016
 ##CSS and HTML
 - **missed first 19 minutes :-(**
@@ -278,4 +282,5 @@ Some of your store items are food, which have a shelf life. Create a class calle
     + <https://gist.github.com/peterxjang/0164f3426579fef3128a>
 - Do the weekend work exercises
 ***
+
 #Date: 11-4-2016
