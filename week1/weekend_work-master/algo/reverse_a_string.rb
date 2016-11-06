@@ -3,7 +3,14 @@
 # comes with Ruby!
 
 def reverse_a_string(string)
-  string.reverse 
+  word = []
+  
+  -1.downto(string.length * -1) do |x|
+    word << string[x]
+  end
+
+  word.join
+  
 end
 
 # Driver code - don't touch anything below this line.
