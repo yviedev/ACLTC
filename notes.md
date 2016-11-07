@@ -215,9 +215,10 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 ##Name Spacing
 - Don't have classes of the same name (bad)
-- ###Ruby Gems
-    + Most times a class will be put inside of a module
-        - **object = Module::Class.new**
+
+###Ruby Gems
++ Most times a class will be put inside of a module
+   - **object = Module::Class.new**
 
 ###Exercise1
  - Wrap your store item files in a module called StoreFront. (note that class names aren’t named with snake case)
