@@ -213,7 +213,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - Doesn't make sense in the real world
 - Initialize is: when I make a new class, I run this method
 
-##Name Spacing
+###Name Spacing
 - Don't have classes of the same name (bad)
 
 ###Ruby Gems
