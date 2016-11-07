@@ -24,7 +24,7 @@ class List
   end
   
   def duration_list
-  sum = 0
+    sum = 0
     @songs.each do |song|
       sum += song.duration
     end

@@ -1,0 +1,17 @@
+<!-- This page randomly picks your lottery numbers -->
+<!-- *Bonus* Display the lotto numbers as an ul, with each number in its own list item -->
+
+<h1>Today's Lottery Numbers</h1>
+<h3>Your lottery numbers are:</h3>
+
+<!-- Print lottery as an array.
+<%= @lottery %> -->
+
+<!-- Prints lottery as an unordered list -->
+<ul>
+<% @lottery.each do |x| %>
+<li><%= x %></li>
+<% end %>
+</ul>
+
+

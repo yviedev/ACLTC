@@ -1,0 +1,14 @@
+<!-- This page contains the lyrics to '99 bottles of beer on the wall' -->
+
+<h1>99 Bottles of Beer on the Wall - Lyrics</h1>
+
+<% @number = 99 %>
+<% while @number > 0 %>
+  <% if @number == 1 %>
+    <%= "1 bottle of beer on the wall, 1 bottles of beer. Take one down and pass it around, no more bottles of beer on the wall." %> <br>
+    <%= "No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall." %>
+  <% else %>
+  <%= "#{@number} bottles of beer on the wall, #{@number} bottles of beer. Take one down and pass it around, #{@number-1} bottles of beer on the wall." %> <br>
+  <% @number -= 1 %>
+  <% end %>
+<% end %>
