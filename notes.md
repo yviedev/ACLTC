@@ -370,3 +370,136 @@ Some of your store items are food, which have a shelf life. Create a class calle
 ###Design personal blog
 -<https://startbootstrap.com/>
 
+#Date: November 7, 2016
+- Page counter didn't work in last exercise because we didn't have a database.
+- Database: piece of software that is optimized for storing alot of data efficiently.
+- Models: are classes that talk to the database
+    - FB: anything that we have to keep track of should be a model (e.g., users, posts, likes, etc.)
+    - Ebay: users, items
+
+###Exercise 1:
+- Make a cookbook app
+```
+Anything below in italics and red is to be replaced with your own custom words!
+
+
+To create a new rails project
+
+
+rails new name-of-your-app --database=postgresql
+
+
+Don’t forget that to work with your app, you need to be in the correct directory! So, do:
+
+
+cd name-of-your-app
+
+
+To create your postgres database:
+
+rake db:create
+
+To run your rails app (also known as the webserver):
+
+rails server
+
+NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab - it is being hogged by the rails server. You must create a new terminal tab (Command + T) and run your terminal commands from there.
+
+To create a new controller: (the name of your controller must be PLURAL!)
+
+    rails generate controller name-of-your-controllers
+    Example: rails generate controller recipes
+
+To create a new model: (the name of your model must be SINGULAR!)
+
+rails generate model ModelName attribute_1 attribute_2 attribute_3 ..etc…
+Example: rails generate model Recipe title chef prep_time:integer
+
+After creating each model, you must enter this magical incantation (which will be explained later):
+
+    rake db:migrate
+
+To run your rails console:
+
+    rails console
+
+Model methods:
+
+Create:
+
+x = ModelName.new({attribute_1: “some value”, attribute_2: “some value”})
+x.save
+
+Read:
+
+xs = ModelName.all
+x = ModelName.first
+x = ModelName.last
+x = ModelName.find_by(attribute_1: “some value”)
+
+To access an attribute of a particular model object directly:
+x = ModelName.find_by(attribute_1: “some value”)
+x.attribute_name
+
+Update:
+
+x = ModelName.find_by(attribute_1: “some value”)
+x.attribute_2 = "new updated value"
+or
+x.assign_attributes({attribute_2: “new updated value”})
+x.save
+
+Destroy:
+x = ModelName.find_by(attribute_1: “some value”)
+x.destroy
+```
+
+##Rails Application
+```
+# routes.rb
+
+Rails.application.routes.draw do
+  get '/place_with_a_recipe' => 'recipes#jay_recipe'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+end
+
+# recipe_controller.rb
+
+class RecipesController < ApplicationController
+
+  def jay_recipe
+    @title = "Jay recipe"
+    @recipe = Recipe.find_by(id: 2)
+    render 'eggs.html.erb'
+  end
+
+  def all_da_recipes
+    @title = "All recipes"
+    @recipes = Recipe.all
+    render 'all.html.erb'
+  end
+
+end
+
+# eggs.html.erb
+
+<h2>here are some eggs</h2>
+
+<p><%= @recipe.chef %></p>
+<p><%= @recipe.ingredients %></p>
+<p><%= @recipe.directions %></p>
+
+# all.html.erb
+
+<h2>here are some eggs</h2>
+<% @recipes.each do |recipe| %>
+  <p>Recipe by: <%= recipe.chef %></p>
+  <p>Recipe ingredients: <%= recipe.ingredients %></p>
+  <p>Recipe instructions: <%= recipe.directions %></p>
+  <br>
+<% end %>
+```
+
+###Exercise 2
+- write code that would add 100 students to your db using faker
+- <https://github.com/stympy/faker>
