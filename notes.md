@@ -429,7 +429,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 # Read:
 
-   xs = ModelName.all
+   x = ModelName.all
    x = ModelName.first
    x = ModelName.last
    x = ModelName.find_by(attribute_1: “some value”)
