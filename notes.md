@@ -399,7 +399,9 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
    rails server
 
-# NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab - it is being hogged by the rails server. You must create a new terminal tab (Command + T) and run your terminal commands from there.
+# NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab
+# it is being hogged by the rails server. 
+# You must create a new terminal tab (Command + T) and run your terminal commands from there.
 
 # To create a new controller: (the name of your controller must be PLURAL!)
 
