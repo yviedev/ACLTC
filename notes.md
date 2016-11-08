@@ -380,83 +380,79 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 ###Exercise 1:
 - Make a cookbook app
-```
-Anything below in italics and red is to be replaced with your own custom words!
+```rails
+# Anything below in italics and red is to be replaced with your own custom words!
 
+# To create a new rails project
 
-To create a new rails project
+   rails new name-of-your-app --database=postgresql
 
+# Don’t forget that to work with your app, you need to be in the correct directory! So, do:
 
-rails new name-of-your-app --database=postgresql
+   cd name-of-your-app
 
+# To create your postgres database:
 
-Don’t forget that to work with your app, you need to be in the correct directory! So, do:
+   rake db:create
 
+# To run your rails app (also known as the webserver):
 
-cd name-of-your-app
+   rails server
 
+# NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab - it is being hogged by the rails server. You must create a new terminal tab (Command + T) and run your terminal commands from there.
 
-To create your postgres database:
-
-rake db:create
-
-To run your rails app (also known as the webserver):
-
-rails server
-
-NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab - it is being hogged by the rails server. You must create a new terminal tab (Command + T) and run your terminal commands from there.
-
-To create a new controller: (the name of your controller must be PLURAL!)
+# To create a new controller: (the name of your controller must be PLURAL!)
 
     rails generate controller name-of-your-controllers
     Example: rails generate controller recipes
 
-To create a new model: (the name of your model must be SINGULAR!)
+# To create a new model: (the name of your model must be SINGULAR!)
 
-rails generate model ModelName attribute_1 attribute_2 attribute_3 ..etc…
-Example: rails generate model Recipe title chef prep_time:integer
+   rails generate model ModelName attribute_1 attribute_2 attribute_3 ..etc…
+   
+# Example: rails generate model Recipe title chef prep_time:integer
 
-After creating each model, you must enter this magical incantation (which will be explained later):
+# After creating each model, you must enter this magical incantation (which will be explained later):
 
     rake db:migrate
 
-To run your rails console:
+# To run your rails console:
 
     rails console
 
-Model methods:
+# Model methods:
 
-Create:
+# Create:
 
-x = ModelName.new({attribute_1: “some value”, attribute_2: “some value”})
-x.save
+   x = ModelName.new({attribute_1: “some value”, attribute_2: “some value”})
+   x.save
 
-Read:
+# Read:
 
-xs = ModelName.all
-x = ModelName.first
-x = ModelName.last
-x = ModelName.find_by(attribute_1: “some value”)
+   xs = ModelName.all
+   x = ModelName.first
+   x = ModelName.last
+   x = ModelName.find_by(attribute_1: “some value”)
 
-To access an attribute of a particular model object directly:
-x = ModelName.find_by(attribute_1: “some value”)
-x.attribute_name
+# To access an attribute of a particular model object directly:
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.attribute_name
 
-Update:
+# Update:
 
-x = ModelName.find_by(attribute_1: “some value”)
-x.attribute_2 = "new updated value"
-or
-x.assign_attributes({attribute_2: “new updated value”})
-x.save
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.attribute_2 = "new updated value"
+# or
+   x.assign_attributes({attribute_2: “new updated value”})
+   x.save
 
-Destroy:
-x = ModelName.find_by(attribute_1: “some value”)
-x.destroy
+# Destroy:
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.destroy
 ```
 
 ##Rails Application
-```
+```rails
 # routes.rb
 
 Rails.application.routes.draw do
