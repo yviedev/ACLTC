@@ -1,0 +1,7 @@
+<h2>here are some eggs</h2>
+<% @recipes.each do |recipe| %>
+  <p>Recipe by: <%= recipe.chef %></p>
+  <p>Recipe ingredients: <%= recipe.ingredients %></p>
+  <p>Recipe instructions: <%= recipe.directions %></p>
+  <br>
+<% end %>
