@@ -380,7 +380,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 ###Exercise 1:
 - Make a cookbook app
-```rails
+```ruby
 # Anything below in italics and red is to be replaced with your own custom words!
 
 # To create a new rails project
@@ -452,7 +452,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 ```
 
 ##Rails Application
-```rails
+```ruby
 # routes.rb
 
 Rails.application.routes.draw do
