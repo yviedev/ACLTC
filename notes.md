@@ -94,7 +94,7 @@ spaces confuse terminal
 <http://codekata.com/kata/kata04-data-munging/>
 
 
-###Date: 10-31-2016
+###Date: 10-31-2016 - Intro Into GitHub & Open Source / Ruby Core Review
 - pair programming
 - sit in a new seat
 - do this at the start of every class
@@ -133,7 +133,7 @@ spaces confuse terminal
     + Rewrite the initialize method to provide default values if they are missing from the options hash.
 
 
-#Date: 11-1-2016
+#Date: 11-1-2016 - Ruby Inheritance
 ###notes
 - stop writing 12 lines of code before running it.
 - write fewer lines and then test.
@@ -182,7 +182,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 <https://gist.github.com/riceb53/f009eab172d09c862618bd117f913614>
 
 
-#Date: 11-2-2016
+#Date: 11-2-2016 - Ruby Modules
 ###Modules
 * anyone who can perform the functions of the module can use it.
 * is different from inheritance
@@ -230,7 +230,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - Share OOP exercise <https://gist.github.com/peterxjang/0164f3426579fef3128a>
 
 
-#Date: 11-3-2016
+#Date: 11-3-2016 - HTML & CSS
 ###CSS and HTML
 - **missed first 19 minutes :-(**
 - change style only in CSS
@@ -284,7 +284,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - Do the weekend work exercises
     + <https://github.com/acltc/weekend_work>
 
-#Date: 11-6-2016
+#Date: 11-6-2016 - Intro into Rails
 ###How does the web work?
 - server
     + has an input and output
@@ -371,7 +371,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 ###Design personal blog
 -<https://startbootstrap.com/>
 
-#Date: November 7, 2016
+#Date: 11-7-2016 - Models and Databases
 - Page counter didn't work in last exercise because we didn't have a database.
 - Database: piece of software that is optimized for storing alot of data efficiently.
 - Models: are classes that talk to the database
@@ -501,7 +501,7 @@ end
 - write code that would add 100 students to your db using faker
 - <https://github.com/stympy/faker>
 
-#Date: November 8, 2016
+#Date: November 8, 2016 - Rails CCS & Gemfile, Mini Capstone
 ###Phonebook Rails App
 - make phone_number a string instead of an integer bc of different type of phone number formats.
 - go to db/seed.rb
@@ -560,3 +560,7 @@ end
         * Use to add css to table
 
 - Bonus: Read more about creating initial data using a seed file here: http://www.railszilla.com/rails-seed-data-example/rails. Try to use the faker gem (https://github.com/stympy/faker) and the seeds.rb file to generate your data!
+
+#Date: 11-9-2016 - Params
+- site=webhp 
+    * Similar to hash. These are hashes in Ruby
