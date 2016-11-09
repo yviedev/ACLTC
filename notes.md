@@ -3,7 +3,7 @@
 ###Carolina - TA
 ###Brandon - TA
 
-##Cool new classmates
+###Cool new classmates
 - Ray
 - Ana
 - Ron
@@ -13,7 +13,7 @@
 - Jigmey
 - Joel
 
-##High-level Overview:
+###High-level Overview:
 * Rails - piece of code that someone else wrote that you can put in your file
 * Git vs. Github
 * HTML5
@@ -25,61 +25,61 @@
 * JavaScript - Language used in browser. Logic for your broswer
     * AngularJS - JS framework. Updates page and database at the same time
 
-##Industry Best Practices
+###Industry Best Practices
 * Open Source
 * Agile - PM organizational method
 * Test Driven Development - a way to write a test to make sure it does a thing
 * API's (application program interface) - your website goes to another website, grabs some info an comes back.
 
-##Coding in the Real World:
+###Coding in the Real World:
 - Professionalism
 - Communication
 - Making Tradeoffs
 - Working with other people's code
 - Working with non-technical people
 
-Pragmatism
+###Pragmatism
 - Getting Things Done
 
-Collaboration
+###Collaboration
 - Taking Initiative
 - Tinkering
 - Always be learning
 
 ##Gists - if you copy and paste a gist link into your Medium blog it will output a code box.
 
-##Using the terminal is much faster than navigating through UI folders.
-- ls -a shows hidden files. files that start with a . are hidden/system files
-- pwd tells you what folder you are in
-- ls -l gives you a list
-- ls -al 
-- la -la does the same thing 
-- clear clear terminal, but can scroll up 
-- cmd k clear but can't scroll up 
+###Using the terminal is much faster than navigating through UI folders.
+- `ls -a` shows hidden files. files that start with a . are hidden/system files
+- `pwd` tells you what folder you are in
+- `ls -l` gives you a list
+- `ls -al` 
+- `ls -la` does the same thing 
+- `clear` clear terminal, but can scroll up 
+- `cmd k` `clear` but can't scroll up 
 - tab will autocomplete for you which you can use to make sure that you are in the right folder and to prevent typos
-- ls - GF 
+- `ls` - GF 
 - teleporting - folder names need to be unique
-- cd ../ go back one directory
-- mkdir makes new directory (Remmber to cd into that folder)
-- touch makes a new file 
-- echo Text >> adds text into a new file 
-- cat Filename and it will show what is in the file 
-- rm removes file. Doesn't confirm delete. There is no way to recover file.
-- rmdir removes empty folders 
-- rm -rf will delete everything (be careful using this command)
+- `cd ../` go back one directory
+- `mkdir` makes new directory (Remmber to cd into that folder)
+- `touch` makes a new file 
+- `echo "text" >> file` adds text into a new file 
+- `cat` Filename and it will show what is in the file 
+- `rm` removes file. Doesn't confirm delete. There is no way to recover file.
+- `rmdir` removes empty folders 
+- `rm -rf` will delete everything (be careful using this command)
 spaces confuse terminal 
-- say allows computer to speak
-- history 20 shows last 20 commands that you did 
+- `say` allows computer to speak
+- `history` 20 shows last 20 commands that you did 
     ! command number
-- cd ~ goes to home folder 
-- cd / all the way to the root folder (for installing things) 
-- cat filename | say => use this command to have the contents of one of the files spoken aloud
+- `cd ~` goes to home folder 
+- `cd /` all the way to the root folder (for installing things) 
+- `cat filename | say =>` use this command to have the contents of one of the files spoken aloud
 
-##Git
+###Git
 * commits - use in the present tense
     
-##What am I responsible for to help me get unstuck?
-##What are others responsible for to help me get unstuck?
+###What am I responsible for to help me get unstuck?
+###What are others responsible for to help me get unstuck?
 
 1. My code is blowing up?
 - Read the error and find the right error line
@@ -94,31 +94,31 @@ spaces confuse terminal
 <http://codekata.com/kata/kata04-data-munging/>
 
 
-#Date: 10-31-2016
-#pair programming
-#sit in a new seat
-do this at the start of every class
+###Date: 10-31-2016
+- pair programming
+- sit in a new seat
+- do this at the start of every class
 
-#RoR
+###RoR
 
-#benefits of open-source coding in GitHub
+###benefits of open-source coding in GitHub
 
-#setting up ssh keys for GitHub
+###setting up ssh keys for GitHub
 <https://docs.google.com/document/d/19IHjU51aq1JjslFRGRpvPLmT9tPQulbqbiyd-Macq2U/edit>
 
-#Git exercises
-make a new local repo, initialize, add, commit, make exact folder on github, add remote and push
+###Git exercises
+- make a new local repo, initialize, add, commit, make exact folder on github, add remote and push
 
-#Classes
-My boss wants me to keep track of two employees using ruby code. They have 4 pieces of info - Name, Salary, Active
+###Classes
+- My boss wants me to keep track of two employees using ruby code. They have 4 pieces of info - Name, Salary, Active
 
-#Ways to store info
+###Ways to store info
 - hash
     * learned about symbols
 - array
 - class
 
-##Exercises
+###Exercises
 - Read more about Ruby’s hash symbol syntax:
 <http://alwayscoding.ca/momentos/2012/06/15/ruby-hash-syntax-hashrocket-vs-json-style/>
 
@@ -134,28 +134,28 @@ My boss wants me to keep track of two employees using ruby code. They have 4 pie
 
 
 #Date: 11-1-2016
-#notes
+###notes
 - stop writing 12 lines of code before running it.
 - write fewer lines and then test.
 - stay DRY and not WET (write everything twice)
 
-#inheritance
+###inheritance
 - you can only inherit from one class but there can be a chain of inheritances.
 - if you have a duplicate method in the child class, ruby will run that method instead of looking in the inherited class.
 - learned how to make a new parent class
 
-##`super`
+###`super`
 - The way super handles arguments is as follows:
     - When you invoke super with no arguments Ruby sends a message to the parent of the current object, asking it to invoke a method of the same name as the method invoking super. It automatically forwards the arguments that were passed to the method from which it's called.
     - Called with an empty argument list - `super()`-it sends no arguments to the higher-up method, even if arguments were passed to the current method.
     - Called with specific arguments - `super(a, b, c)` - it sends exactly those arguments.
 
-##other new terms
+###other new terms
 - attr_reader
 - attr_writer
 - attr_accessor
 
-##hot keys for sublime
+###hot keys for sublime
 - <http://docs.sublimetext.info/en/latest/reference/keyboard_shortcuts_osx.html>
 
 ###Exercise 1
@@ -231,7 +231,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 
 #Date: 11-3-2016
-##CSS and HTML
+###CSS and HTML
 - **missed first 19 minutes :-(**
 - change style only in CSS
 - id's can only be used once
@@ -276,7 +276,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - Make codepen page into final page
 - <http://codepen.io/anon/pen/WoNoKx>
 
-##Weekend work
+###Weekend work
 - Write a blog post on medium
 - Finish the pair-programming problems from 11-2
     + <https://docs.google.com/document/d/1Z7DaCGEwPKQOQptvBD8jd_XCSMkPBc1fW-igdZcj6a8/edit>
@@ -295,7 +295,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
     + Postman
         * <https://github.com/postmanlabs/postman-app-support>
 
-##RAILS
+###RAILS
 - When run for the first time, it will run a bunch of code and you will get a bunch of files. Similar to Bootstrap.
 - Will be using 3 things from now on:
     + Web Browser (Chrome)
@@ -315,11 +315,11 @@ Some of your store items are food, which have a shelf life. Create a class calle
     + `rails server`
 - `cmd + T` = opens new terminal
 - `rails generate controller pages`
-    ```
+```ruby
         def info_about
             render 'information.html'
         end
-    ```
+```
 - config => routes.rb
     + `get '/about' => 'pages#info_about'`
 - app => views => pages => about.html
@@ -380,83 +380,80 @@ Some of your store items are food, which have a shelf life. Create a class calle
 
 ###Exercise 1:
 - Make a cookbook app
-```
-Anything below in italics and red is to be replaced with your own custom words!
+```ruby
+# Anything below in italics and red is to be replaced with your own custom words!
 
+# To create a new rails project
 
-To create a new rails project
+   rails new name-of-your-app --database=postgresql
 
+# Don’t forget that to work with your app, you need to be in the correct directory! So, do:
 
-rails new name-of-your-app --database=postgresql
+   cd name-of-your-app
 
+# To create your postgres database:
 
-Don’t forget that to work with your app, you need to be in the correct directory! So, do:
+   rake db:create
 
+# To run your rails app (also known as the webserver):
 
-cd name-of-your-app
+   rails server
 
+# NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab
+# it is being hogged by the rails server. 
+# You must create a new terminal tab (Command + T) and run your terminal commands from there.
 
-To create your postgres database:
-
-rake db:create
-
-To run your rails app (also known as the webserver):
-
-rails server
-
-NOTE: Once your rails server is running, you will no longer be able to run commands from that terminal tab - it is being hogged by the rails server. You must create a new terminal tab (Command + T) and run your terminal commands from there.
-
-To create a new controller: (the name of your controller must be PLURAL!)
+# To create a new controller: (the name of your controller must be PLURAL!)
 
     rails generate controller name-of-your-controllers
     Example: rails generate controller recipes
 
-To create a new model: (the name of your model must be SINGULAR!)
+# To create a new model: (the name of your model must be SINGULAR!)
 
-rails generate model ModelName attribute_1 attribute_2 attribute_3 ..etc…
-Example: rails generate model Recipe title chef prep_time:integer
+   rails generate model ModelName attribute_1 attribute_2 attribute_3 ..etc…
+   
+# Example: rails generate model Recipe title chef prep_time:integer
 
-After creating each model, you must enter this magical incantation (which will be explained later):
+# After creating each model, you must enter this magical incantation (which will be explained later):
 
     rake db:migrate
 
-To run your rails console:
+# To run your rails console:
 
     rails console
 
-Model methods:
+# Model methods:
 
-Create:
+# Create:
 
-x = ModelName.new({attribute_1: “some value”, attribute_2: “some value”})
-x.save
+   x = ModelName.new({attribute_1: “some value”, attribute_2: “some value”})
+   x.save
 
-Read:
+# Read:
 
-xs = ModelName.all
-x = ModelName.first
-x = ModelName.last
-x = ModelName.find_by(attribute_1: “some value”)
+   x = ModelName.all
+   x = ModelName.first
+   x = ModelName.last
+   x = ModelName.find_by(attribute_1: “some value”)
 
-To access an attribute of a particular model object directly:
-x = ModelName.find_by(attribute_1: “some value”)
-x.attribute_name
+# To access an attribute of a particular model object directly:
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.attribute_name
 
-Update:
+# Update:
 
-x = ModelName.find_by(attribute_1: “some value”)
-x.attribute_2 = "new updated value"
-or
-x.assign_attributes({attribute_2: “new updated value”})
-x.save
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.attribute_2 = "new updated value"
+# or
+   x.assign_attributes({attribute_2: “new updated value”})
+   x.save
 
-Destroy:
-x = ModelName.find_by(attribute_1: “some value”)
-x.destroy
+# Destroy:
+   x = ModelName.find_by(attribute_1: “some value”)
+   x.destroy
 ```
-
 ##Rails Application
-```
+```ruby
 # routes.rb
 
 Rails.application.routes.draw do
@@ -500,7 +497,6 @@ end
   <br>
 <% end %>
 ```
-
 ###Exercise 2
 - write code that would add 100 students to your db using faker
 - <https://github.com/stympy/faker>
