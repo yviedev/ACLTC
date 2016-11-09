@@ -539,3 +539,22 @@ end
     + Inside app/assets/javascripts/application.js, add this line under the line that says `//=require jquery`: 
         + `//= require bootstrap-sprockets`
     + If your rails server was already running, restart it.
+
+###Mini-Capstone Exercise
+1 - Create a new rails app called mini-capstone with a postgres database (check your Gemfile for the line `gem 'pg'` to make sure you’re using postgres)
+    a - Use git to initialize, add, and commit your code.
+    b - Use GitHub to create a repo called mini-capstone, then copy and paste the commands to push your git repo to GitHub.
+
+2 -  Create a products controller
+    a - Use git to add, commit, and push your code.
+
+3 - Create a product model. Some important attributes include name, price, image, and description.
+    a - Use git to add, commit, and push your code.
+
+4 - Create a page that displays all the available products.
+    a - Use git to add, commit, and push your code.
+
+5 - Install Bootstrap, using the cheat sheet provided earlier
+    a - Use git to add, commit, and push your code.
+
+- Bonus: Read more about creating initial data using a seed file here: http://www.railszilla.com/rails-seed-data-example/rails. Try to use the faker gem (https://github.com/stympy/faker) and the seeds.rb file to generate your data!
