@@ -326,7 +326,7 @@ Some of your store items are food, which have a shelf life. Create a class calle
 - `html.erb` = embedded ruby
     + `<%= Time.now%>` will run in ruby
 - Dev tools (Chrome) = `cmd + option + I`
-    + head = views => layouts => application.html.erb
+    + head = app => views => layouts => application.html.erb
     + Title by default is name of rails application
         + To change the name: 
             + `<title><%= @title %></title>`
@@ -504,3 +504,42 @@ end
 ###Exercise 2
 - write code that would add 100 students to your db using faker
 - <https://github.com/stympy/faker>
+
+#Date: November 8, 2016
+###Phonebook Rails App
+- make phone_number a string instead of an integer bc of different type of phone number formats.
+- go to db/seed.rb
+```ruby
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+100.times do 
+  contact = Contact.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone_number: Faker::PhoneNumber.phone_number)
+  contact.save
+end
+```
+- `rake db:seed`
+
+###How to add a gem file to Rails application
+- Go to `Gemfile`
+- Add `gem gem-name`
+- Run `bundle` or `bundle update` in bash
+
+###CSS and Sass(SCSS)
+- contact-app => app => stylesheets
+- <https://github.com/twbs/bootstrap-sass>
+    + Add ‘bootstrap-sass’ anywhere in your Gemfile.
+        + `gem 'bootstrap-sass', '~> 3.3.6'`
+    + Inside your terminal (make sure you’re in the folder where your Rails app is), run: 
+        + `bundle install`
+    + Inside app/assets/stylesheets, create a new file called _external.css.scss
+        + Add these lines to that file:
+            + `@import "bootstrap-sprockets";`
+            + `@import "bootstrap";`
+    + Inside app/assets/javascripts/application.js, add this line under the line that says `//=require jquery`: 
+        + `//= require bootstrap-sprockets`
+    + If your rails server was already running, restart it.
