@@ -556,5 +556,7 @@ end
 
 5 - Install Bootstrap, using the cheat sheet provided earlier
     a - Use git to add, commit, and push your code.
+    b - <http://stackoverflow.com/questions/31483823/sort-table-data-by-columns-in-rails-with-bootstrap>
+        * Use to add css to table
 
 - Bonus: Read more about creating initial data using a seed file here: http://www.railszilla.com/rails-seed-data-example/rails. Try to use the faker gem (https://github.com/stympy/faker) and the seeds.rb file to generate your data!
