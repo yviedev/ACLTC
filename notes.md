@@ -453,7 +453,8 @@ Some of your store items are food, which have a shelf life. Create a class calle
    x.destroy
 ```
 ##Rails Application
-```ruby
+
+```
 # routes.rb
 
 Rails.application.routes.draw do
@@ -482,7 +483,6 @@ end
 # eggs.html.erb
 
 <h2>here are some eggs</h2>
-
 <p><%= @recipe.chef %></p>
 <p><%= @recipe.ingredients %></p>
 <p><%= @recipe.directions %></p>
@@ -497,6 +497,7 @@ end
   <br>
 <% end %>
 ```
+
 ###Exercise 2
 - write code that would add 100 students to your db using faker
 - <https://github.com/stympy/faker>
@@ -505,6 +506,7 @@ end
 ###Phonebook Rails App
 - make phone_number a string instead of an integer bc of different type of phone number formats.
 - go to db/seed.rb
+
 ```ruby
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -518,6 +520,7 @@ end
   contact.save
 end
 ```
+
 - `rake db:seed`
 
 ###How to add a gem file to Rails application
@@ -564,3 +567,35 @@ end
 #Date: 11-9-2016 - Params
 - site=webhp 
     * Similar to hash. These are hashes in Ruby
+- params: Allows us to get flexible user input
+```
+QuerysController < ApplicationController
+    def show_message
+        p '*' * 30
+        @message = params["some_key"]
+        p '*' * 30
+        render 'new_message.html.erb'
+    end
+end
+```
+
+On the webpage enter `/route?param key=input`
+
+###Exercise 1
+• Create a brand new app called params-game-app where you can use query parameters to tell the app your name, and the app will show your name on the screen in all caps.
+• Next make it so that if your name begins with the letter “a”, there’s a message that appears saying, “Hey, your name starts with the first letter of the alphabet!”
+• Create the guess-a-number game using query parameters. (Reminder: This is the game where the app chooses a number between 1 and 100, and the user has to guess what it is. It also tells the user after each guess whether to guess higher or lower.) One caveat: Instead of having the program choosing a random number in advance, just choose a specific number, such as 36. One other gotcha: All params are initially treated as strings, so you’ll have to do some conversion to integer to work around that.
+- Bonus: Read more about how Rails creates parameters from urls here: <http://codefol.io/posts/How-Does-Rack-Parse-Query-Params-With-parse-nested-query>
+    - Try to make some more complex get paramters!
+- Bonus: Create a new route, action, and view, that counts + 1 every time a button is clicked (without a database!).
+
+###Wildcards
+`http://localhost:3000/practice/wildcard-input`
+
+###Exercise 2
+- Recreate the same guess-a-number exercise as above but using url params.
+• Bonus: Read about the difference between wildcard segments and route globbing here: http://guides.rubyonrails.org/routing.html#route-globbing-and-wildcard-segments. Try to make a route that uses both (this is advanced stuff!).
+
+###Exercise 3
+- Recreate the same guess-a-number exercise as above but by using a form. 
+- Bonus: In your contacts app, add a feature so that a user can add a new contact via a form. You do not need to save the contact to a database.

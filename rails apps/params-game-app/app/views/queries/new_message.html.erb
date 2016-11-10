@@ -1,0 +1,16 @@
+//HTML form <br>
+Enter a message: <br>
+<form action="/show_a_new_message" method="post">
+  <label for="message">Message</label>
+  <input type="text" name="message">
+  <input type="submit" value="Submit This!!">
+</form>
+
+<br>
+
+# Ruby form
+<%= form_tag '/show_a_new_message', method: :post do %>
+  <%= label_tag :message %>
+  <%= text_field_tag :message %>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>
