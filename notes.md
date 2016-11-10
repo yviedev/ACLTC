@@ -582,9 +582,9 @@ end
 On the webpage enter `/route?param key=input`
 
 ###Exercise 1
-• Create a brand new app called params-game-app where you can use query parameters to tell the app your name, and the app will show your name on the screen in all caps.
-• Next make it so that if your name begins with the letter “a”, there’s a message that appears saying, “Hey, your name starts with the first letter of the alphabet!”
-• Create the guess-a-number game using query parameters. (Reminder: This is the game where the app chooses a number between 1 and 100, and the user has to guess what it is. It also tells the user after each guess whether to guess higher or lower.) One caveat: Instead of having the program choosing a random number in advance, just choose a specific number, such as 36. One other gotcha: All params are initially treated as strings, so you’ll have to do some conversion to integer to work around that.
+- Create a brand new app called params-game-app where you can use query parameters to tell the app your name, and the app will show your name on the screen in all caps.
+- Next make it so that if your name begins with the letter “a”, there’s a message that appears saying, “Hey, your name starts with the first letter of the alphabet!”
+- Create the guess-a-number game using query parameters. (Reminder: This is the game where the app chooses a number between 1 and 100, and the user has to guess what it is. It also tells the user after each guess whether to guess higher or lower.) One caveat: Instead of having the program choosing a random number in advance, just choose a specific number, such as 36. One other gotcha: All params are initially treated as strings, so you’ll have to do some conversion to integer to work around that.
 - Bonus: Read more about how Rails creates parameters from urls here: <http://codefol.io/posts/How-Does-Rack-Parse-Query-Params-With-parse-nested-query>
     - Try to make some more complex get paramters!
 - Bonus: Create a new route, action, and view, that counts + 1 every time a button is clicked (without a database!).
@@ -594,7 +594,7 @@ On the webpage enter `/route?param key=input`
 
 ###Exercise 2
 - Recreate the same guess-a-number exercise as above but using url params.
-• Bonus: Read about the difference between wildcard segments and route globbing here: http://guides.rubyonrails.org/routing.html#route-globbing-and-wildcard-segments. Try to make a route that uses both (this is advanced stuff!).
+- Bonus: Read about the difference between wildcard segments and route globbing here: http://guides.rubyonrails.org/routing.html#route-globbing-and-wildcard-segments. Try to make a route that uses both (this is advanced stuff!).
 
 ###Exercise 3
 - Recreate the same guess-a-number exercise as above but by using a form. 
