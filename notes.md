@@ -590,7 +590,19 @@ On the webpage enter `/route?param key=input`
 - Bonus: Create a new route, action, and view, that counts + 1 every time a button is clicked (without a database!).
 
 ###Wildcards
-`http://localhost:3000/practice/wildcard-input`
+- add `get '/practice/:idaho' => 'queries#wild'` in routes.rb
+- add the following to your controller:
+```ruby
+def wild
+    @title = "Wildcard"
+    @name = params["idaho"]
+    render 'wild.html.erb'
+end
+```  
+- add to url =? `http://localhost:3000/practice/jane`
+- result will be:
+   - `<h1>I am wild <%= @name %>.</h1>`
+   - I am wild jane
 
 ###Exercise 2
 - Recreate the same guess-a-number exercise as above but using url params.
