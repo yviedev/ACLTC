@@ -598,7 +598,8 @@ def wild
     @name = params["idaho"]
     render 'wild.html.erb'
 end
-```  
+```
+
 - add to url =? `http://localhost:3000/practice/jane`
 - result will be:
    - `<h1>I am wild <%= @name %>.</h1>`
@@ -608,6 +609,59 @@ end
 - Recreate the same guess-a-number exercise as above but using url params.
 - Bonus: Read about the difference between wildcard segments and route globbing here: http://guides.rubyonrails.org/routing.html#route-globbing-and-wildcard-segments. Try to make a route that uses both (this is advanced stuff!).
 
+###Forms
+```erb
+<%= form_tag '/guess_number_result', method: :post do %>
+  <%= label_tag :message %>
+  <%= text_field_tag :message %>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>
+```
+
 ###Exercise 3
 - Recreate the same guess-a-number exercise as above but by using a form. 
 - Bonus: In your contacts app, add a feature so that a user can add a new contact via a form. You do not need to save the contact to a database.
+
+#Date: 11-10-2016 - Params
+
+###Exercise 1
+- To get started on security app
+- Copy the link from Github
+    + fork/clone dis <https://github.com/acltc/params-security-app-5>
+- In your terminal: git clone copied-link
+- cd folder-name
+- bundle
+- rails server
+
+- Run it in your terminal and go to localhost:3000.
+- Back story: You are hackers breaking into a enemy government’s classified website, whose source code you’ve hacked and downloaded. Based on the source code alone (and the skills we’ve learned today), you will hack your way to obtain a top secret message.
+- Work in pairs - this is tough!
+
+- Gate 1: (Query param) http://localhost:3000/dbaf78yh3n3r2rfwfnd8andfh?secret=nasdf82fe2
+- Gate 2: (Wildcard) http://localhost:3000/dbaf78yh3nnd844andfh66/centerfuge
+- Gate 3: (Form) http://localhost:3000/dbaf78yh3nwctwretnd8andfh
+    + Password: Budapest
+- Can use Postman to DELETE http://localhost:3000/dbaf78yh3nnd32438andfh/
+    + or `<input name="_method" type="hidden" value="delete">` in dev tools
+- http://localhost:3000/
+- Must use Postman
+
+###Mini-Capstone
+- Add a form to add a new contact to your project just like the demo.
+- Add a form to add a new product in your mini-capstone.
+
+###REST
+- Created by [Roy T. Fielding] <http://roy.gbiv.com/>
+- Good practice so that someone else looking at your code will know what is happening easily
+
+##CRUD (Create, read, update and delete)
+- <http://guides.rubyonrails.org/routing.html#crud-verbs-and-actions>
+|HTTP Verb   |Path    |Controller#Action   |Used for
+|-----|:-----:|------:
+|GET |/photos |photos#index    |display a list of all photos|
+|GET |/photos/new |photos#new  |return an HTML form for creating a new photo|
+|POST    |/photos |photos#create   |create a new photo|
+|GET |/photos/:id |photos#show |display a specific photo|
+|GET |/photos/:id/edit    |photos#edit |return an HTML form for editing a photo|
+|PATCH/PUT   |/photos/:id |photos#update   |update a specific photo|
+|DELETE  |/photos/:id |photos#destroy  |delete a specific photo|

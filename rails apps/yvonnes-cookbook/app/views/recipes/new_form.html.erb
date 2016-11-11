@@ -1,0 +1,13 @@
+<p>This is where the form will go</p>
+
+<%= form_tag '/created_recipe', method: :post do %>
+  <%= label_tag :form_title %>
+  <%= text_field_tag :form_title %><br>
+  <%= label_tag :form_directions %> 
+  <%= text_field_tag :form_directions %><br>
+  <%= label_tag :form_chef %>
+  <%= text_field_tag :form_chef %><br>
+  <%= label_tag :form_ingredients %>
+  <%= text_field_tag :form_ingredients %>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>
