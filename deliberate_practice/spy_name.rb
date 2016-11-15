@@ -8,7 +8,9 @@
             # 5)Also capitalize every other character 
             # 6) Example of "Joel Matos" = "TuVeN MiUk"
 
-  letters = ('a'..'z').to_a
-  p new_name = "Joel Matos".reverse.downcase.chars
-  p new_name.select { |p| p.next }
-  p letters
+letters = ('a'..'z').to_a
+p new_name = "Joel Matos".reverse.downcase.chars
+
+new_name.each_with_index do |x, index|
+  p letters[letters.index(new_name[index])+1]
+end

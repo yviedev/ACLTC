@@ -661,8 +661,120 @@ end
 |---|---|---|---|
 |GET |/photos |photos#index    |display a list of all photos|
 |GET |/photos/new |photos#new  |return an HTML form for creating a new photo|
-|POST    |/photos |photos#create   |create a new photo|
+|POST|/photos |photos#create   |create a new photo|
 |GET |/photos/:id |photos#show |display a specific photo|
-|GET |/photos/:id/edit    |photos#edit |return an HTML form for editing a photo|
+|GET |/photos/:id/edit         |photos#edit |return an HTML form for editing a photo|
 |PATCH/PUT   |/photos/:id |photos#update   |update a specific photo|
 |DELETE  |/photos/:id |photos#destroy  |delete a specific photo|
+
+#Date: 11-13-2016
+```ruby
+# controller
+def index
+    @recipes = Recipe.all
+    render 'index.html.erb.'
+end
+
+def show
+    @recipe = Recipe.find_by(id: params["id"]) #key/value pair
+    render 'show.html.erb'
+end
+
+#new and create
+def new
+    render 'new.html.erb'
+end
+
+def create
+    render 'create.html.erb'
+end
+
+def edit
+    @recipe = Recipe.find_by(id: params["id"])
+    render 'edit.html.erb'
+end
+
+def update
+    @recipe = Recipe.find_by(id: params["id"])
+    @recipe.update(title: params["title"], chef: params["chef"], directions: params["directions"], ingredients:params["ingredients"])
+    render 'update.html.erb'
+end
+
+def destroy
+    # grab the recipe by id
+    @recipe = Recipe.find_by(id: params["id"])
+    # kill it
+    @recipe.destroy
+    render 'destroy.html.erb'
+end
+```
+
+```
+#html form file
+<%= form_tag "/products/@product.id", method: :post do %> #don't forget to change patch to post
+  <div>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, @product.name %>
+  </div>
+  <div>
+  <%= label_tag :price %>
+  <%= text_field_tag :price, @product.price %>
+  </div>
+  <div>
+  <%= label_tag :image %>
+  <%= text_field_tag :image, @product.image %>
+  </div>
+  <div>
+  <%= label_tag :description %>
+  <%= text_field_tag :description, @product.description %>
+  </div>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>
+```
+
+- Make sure that wildcard routes go later than specific routes.
+- Use double quotes for string interpolation
+
+###How to Google
+
+#Date: 11-14-2016
+###redirects
+- `render` for (index, show, new, edit)
+- no `render` for (create, update, destroy) 
+    + create => `/Model/#{instance.id}`
+    + update => `/Model/#{instance.id}`
+    + destroy => `/Model`
+- delete inapplicable instance variables
+- delete inapplicable erb files
+    + create
+    + update
+    + destroy
+
+###flash messages
+- Stick in controller method
+    +  flash[:created] = "You made a new thing"
+- add to application.html.erb
+```
+    <body>
+    <% flash.each do |name, message| %>
+        <%= message %>
+    <% end %>
+```
+
+###Alerts
+- <http://getbootstrap.com/components/#alerts>
+```html
+    <body>
+    <% flash.each do |name, message| %>
+        <div class="alert alert-success" role="alert"><%= message %></div>
+    <% end %>
+```
+- match up keys with bootstrap classes
+    + `<div class="alert alert-<%= name %>" role="alert">`
+- Dismissable alerts
+    + `<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>`
+
+###CSS
+- <http://www.cssfontstack.com/>
+- <http://subtlepatterns.com/>
+- .each_slice() ruby method
