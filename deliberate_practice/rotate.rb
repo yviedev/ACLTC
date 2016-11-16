@@ -7,10 +7,10 @@
 #Take a string password and shift by 2 characters and upcase each letter character.
 
 # Problem #1
-def password(string)
+def password(string, num)
   # p string.chars.rotate(2).join
   new_pwd = []
-  p new_string = string.chars.rotate(2)
+  new_string = string.chars.rotate(num)
   new_string.each_with_index do |letter, index|
     if index % 2 == 0
       new_pwd << letter.upcase
@@ -19,7 +19,7 @@ def password(string)
     end
   end
 
-  p new_pwd.join
+  new_pwd.join
 
 end
 
@@ -29,17 +29,26 @@ def password2(string)
 end
 
 # This method will perform a similar rotate method but in a long way
-def password3(string)
-  new_pwd = []
-  new_string = string.chars
-  new_pwd << new_string[2]
-  new_pwd << new_string[3]
-  new_pwd << new_string[0]
-  new_pwd << new_string[1]
+def password3(string, num)
+	new_pwd = []
+	new_pwd_cap = []
+	new_string = string.chars
 
-for x in -2..(new_string.length-(-2)) do
-  p new_string[-1 * (new_string.length-x)]
+	for x in (-1 * num)..(new_string.length - (num + 1)) do
+		new_pwd << new_string[x]
+	end
+	
+	new_pwd.each_with_index do |letter, index|
+		if index % 2 == 0
+	      new_pwd_cap << letter.upcase
+	    else
+	      new_pwd_cap << letter
+	    end
+	end
+		
+	new_pwd_cap.join
+	
 end
 
-password("word")
-password3("word")
+password("word", 2)
+password3("word", 2)
