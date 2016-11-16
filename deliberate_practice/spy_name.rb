@@ -8,9 +8,42 @@
             # 5)Also capitalize every other character 
             # 6) Example of "Joel Matos" = "TuVeN MiUk"
 
-letters = ('a'..'z').to_a
-p new_name = "Joel Matos".reverse.downcase.chars
+def spy_name(name)
+            letters = ('a'..'z').to_a
+            vowels = "aeiou"
+            vowels_arry = vowels.chars
+            new_name = []
+            new_name_arry = []
+            name_arry = name.reverse.downcase.chars
 
-new_name.each_with_index do |x, index|
-  p letters[letters.index(new_name[index])+1]
+            name_arry.each do |letter|
+                        if letter == " "
+                                    new_name << letter
+                        elsif vowels.include?(letter)
+                                    if letter == "u"
+                                                new_name << "a"
+                                    else
+                                                new_name << vowels_arry[vowels_arry.index(letter) + 1]
+                                    end
+                        elsif
+                                    letter == "z" 
+                                                new_name << "a"
+                        else
+                                    new_name << letters[letters.index(letter) + 1]
+                        end
+            end
+
+            p new_name
+
+            new_name.each_with_index do |letter, index|
+                        if index % 2 == 0
+                                    new_name_arry << letter.upcase
+                        else
+                                    new_name_arry << letter
+                        end
+            end
+
+            new_name_arry.join
 end
+	
+spy_name("Joel Matos")
