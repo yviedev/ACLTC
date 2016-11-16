@@ -16,12 +16,18 @@ dup_arry(["a", "b", "c", "d"])
 #["hello ", "good bye", " good morning", "  good afternoon"] => ["hello", "goodbye", "goodmorning", "goodafternoon"]
 
 def remove_string(input)
-  new_arry = []
-  input.each do |word|
-    if word.char
-    new_arry << word
-  end
-  p new_arry
+	new_arry = []
+	final_ary = []
+ 
+	input.each do |word|
+	  	new_arry << word.chars
+	end
+	
+	0..(new_arry.length-1).times do |x|
+		final_ary << (new_arry[x] - [" "]).join
+	end
+	
+	final_ary
 end
 
 remove_string(["hello ", "good bye", " good morning", "  good afternoon"])
