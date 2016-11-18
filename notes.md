@@ -778,3 +778,231 @@ end
 - <http://www.cssfontstack.com/>
 - <http://subtlepatterns.com/>
 - .each_slice() ruby method
+
+#Date: 11-15-2016
+###Model
+``` ruby
+#moving method to the model where they belong
+
+def mardi_gras_time
+    prep_time * 2
+end
+
+#def prep_time
+    #ingredients.split(',')
+#end
+
+#def split_directions
+    #directions.split(',')
+#end
+
+def split_something(thing_to_split)
+    thing_to_split.split(',')
+end
+
+def hours_and_minutes
+    hours = prep_time / 60
+    minutes = prep_time % 60
+    message = ""
+    if hours > 0
+        message += "#{hours} hours"
+    end
+    if minutes > 0
+        message += "#{minutes} minutes"
+    end
+
+    message
+end
+
+def pretty time
+    created_at.strftime("%b %d %y")
+end
+```
+
+- number_to_currency => $9.00
+
+```
+def style_message
+    if price.to_f < 3
+        style = "red"
+    else
+        style = ""
+    end
+end
+```
+
+###Style by condition
+`<p class="<%= product.style_message %>"><%= product.sale_message %></p>`
+
+###Edit model
+- db => migrate => create db
+
+###Migration
+- `rails new app migration-app`
+- `rails generate model Product title description isbn`
+- `rails generate migration (title of migration)`
+- update new database
+    + add_column :products, :stock, :integer
+- `rake db:migration`
+- Active Record supports the following database column types:
+    + :binary
+    + :boolean
+    + :date
+    + :datetime
+    + :decimal
+    + :float
+    + :integer
+    + :primary_key
+    + :string
+    + :text
+    + :time
+    + :timestamp
+
+- schema is current database
+
+###To create a database:
+1. In the terminal, `run: rake db:create`
+    - Note: you only need to do this once per app
+
+###To create a new table in the database:
+1. In the terminal, run: 
+    `rails generate model Product name:string description:text 'price:decimal{5,2}'`
+    - DOUBLE CHECK THE GENERATED MIGRATION FILE CODE (in db/migrate folder)
+    - If there are typos, you can fix them now before doing the next step
+    - In the terminal, run: rake db:migrate
+    - Note: A description of rails database types can be found here: <http://stackoverflow.com/questions/11889048/is-there-documentation-for-the-rails-column-types>
+
+###To make changes to existing database tables:
+1. In the terminal, run: rails generate migration NameDescribingTheChange
+2. Add code to the new migration file generated in the db/migrate folder
+    - All available commands here: <http://api.rubyonrails.org/classes/ActiveRecord/Migration.html> 
+    - Add a column: `add_column :products, :image, :string`
+    - Rename a column: `rename_column :products, :image, :photo`
+    - In this example, `image is the old name, photo is the new name`
+    - Remove a column: `remove_column :products, :photo, :string`
+    - Change a data type: `change_column :products, :quantity, :integer`
+        * In this example, quantity will become an integer
+    - Using decimals: add_column :products, :price, :decimal, precision: 5, scale: 2
+        * Precision is the total number of digits, scale is the number of digits after the decimal
+        * In this example, 103.42 is a valid price, 3432.21 is invalid (total digits is greater than precision)
+        * NOTE: postgres is a bit touchy changing strings to decimals, use these two lines in a migration:
+            - change_column :products, :price, "numeric USING CAST(price AS numeric)"
+            - change_column :products, :price, :decimal, precision: 9, scale: 2
+3. DOUBLE CHECK YOUR MIGRATION FILE CODE
+    - If there are typos, you can fix them now before doing the next step
+4. In the terminal, run: rake db:migrate
+5. Shortcuts for steps 1 and 2:
+    - To add a column to a table:
+        * `rails generate migration AddImageToProducts image:string`
+    - To remove a column from a table:
+        * rails generate migration RemovePhotoFromProducts photo:string
+    - No other shortcuts exist - if you need to rename, change, etc., you’ll need to generate an empty migration file and write the code in as described above
+
+###To generate sample data for database:
+1. Write code in the db/seeds.rb file (instead of through the rails console)
+2. In the terminal, run: rake db:seed
+3. Note: If you already have sample data created from rails console or your application, you can use this gem to generate a seed file so others can reproduce it: <https://github.com/rroblak/seed_dump>
+
+#Date: 11-16-2016
+
+###More Migration
+-Can name your migration file to add to migration file
+    - `AddSoldToProducts`
+    - `RemoveSoldFromProducts`
+
+###SQL (Structured Query Language)
+- `select first_name from contacts;`
+|Common SQL Queries|
+|---------|-----------|
+|SELECT *
+FROM recipes;| Select all columns from the recipes table |
+|SELECT description, photo
+FROM recipes; | Select only description and photo from recipes table |
+|SELECT *
+FROM recipes
+WHERE name = 'Pizza'; |
+Select all from recipes where name = 'Pizza' |
+|SELECT *
+FROM recipes
+WHERE prep_time > 100 
+AND name = 'Pizza'; |
+Select all from recipes where pre_time > 100 and name ='Pizza' (Use WHERE the first time, then AND for the 2nd, 3rd, etc. times) |
+|SELECT *
+FROM recipes
+WHERE prep_time > 100
+OR name = 'Pizza'; |
+Select all from recipes where pre_time > 100 or name ='Pizza' |
+|SELECT *
+FROM recipes
+ORDER BY prep_time;
+|Select all and order all recipes in ascending order|
+|SELECT *
+FROM recipes
+ORDER BY prep_time DESC;|
+|Select all and order all recipes in descending order|
+|SELECT *
+FROM recipes
+LIMIT 5;|
+|Select the first 5 recipes|
+|SELECT COUNT(*)
+FROM recipes;
+Count the number of recipes|
+|SELECT SUM(prep_time)
+FROM recipes;|
+|Get the sum of all the prep_times from recipes|
+|SELECT AVG(prep_time)
+FROM recipes;|
+|Get the average of all the prep_times from recipes|
+|SELECT * 
+FROM recipes 
+WHERE ingredients LIKE '%bread%';|
+|Select all from recipes where ingredients contains the string 'bread' (case sensitive)|
+|SELECT * 
+FROM recipes 
+WHERE description NOT LIKE '%bake%';|
+Select all from recipes where description doesn’t contain the string 'bake' (case sensitive) |
+
+###Exercise
+- Use SQL to grab the following data from the employees database:
+- Get all info about employees whose last names begin with “Z”.
+- Get the first name and last name of employees whose last names begin with “Mi”.
+- Get first name,  last name, and birthday of 5 oldest employees.
+- Get all info about the 5 most recent hires.
+- Get all info about 5 most recent female hires.
+* Bonus: Get all the info on all employees whose first name is Mario or Luigi.
+* Bonus: Get only the first and last name of employees without the the last name “Aingworth.”
+* Bonus: Get all the info on employees whose first name is Arif, but only those hired between 1988 and 1992.
+* Bonus: How many employees were making over $100,000 a year on June 24, 1992? Return only a number.
+
+#Date: 11-17-2016
+
+###Migration Review
+
+###seeds.rb
+- Make data
+- add `gem seed_dump`
+    * run `bin/rake db:seed:dump`
+
+###Exercise
+- Create a new rails app called real-estate-app
+    - Create a model (don’t worry about routes, views, or controllers) with the attributes below. Try your best to choose the correct datatype when creating the model:
+        - description
+        - year_built
+        - square_feet
+        - bedrooms
+        - bathrooms
+        - floors
+        - availability
+        - price
+    - Bonus: Your project manager has told you that they no longer need to know “floors” for listings. Remove it from your model.
+- Exercise: Make additional changes to your Contacts App
+    - One of the other developers in your company has created a map to show where all the addresses are on a google map. But, she needs the data to be computer/search friendly, and instead of adding an address column, add two attributes called “latitude” and “longitude.” Use the float datatype. 
+    • Bonus: Update (or create if you haven’t already) the form that users use to input their address details. Instead of saving the address directly like before, have the controller convert the address to latitude and longitude. To do this you’ll need to:
+    - Add the “geocoder” gem to your gemfile. Bundle.
+    - In your controller, you can get the coordinates by:
+        - coordinates = Geocoder.coordinates(address)
+        - where address is whatever the user inputted (like “1441 W Carmen Ave, Chicago, IL”). And coordinates is an array of latitude and longitude.
+
+###Active Record Queries
+- It's simplier, easier and you write in Ruby
+- Comparison of SQL to Active Record in Rails

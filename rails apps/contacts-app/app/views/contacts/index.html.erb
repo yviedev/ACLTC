@@ -1,0 +1,29 @@
+<h1><a class="btn btn-default" href="#" role="button">All Contacts</a></h1>
+
+<table class="table table-hover" data-sort-name="last_name" data-sort-order="desc">
+  <thead>
+    <tr>
+      <th data-field="first_name" data-sortable="true">First Name</th>
+      <th data-field="last_name" data-sortable="true">Last Name</th>
+      <th data-field="latitude" data-sortable="true">Latitude</th>
+      <th data-field="longitude" data-sortable="true">Longitude</th>
+      <th data-field="email" data-sortable="true">Email</th>
+      <th data-field="phone_number" data-sortable="true">Phone Number</th>
+      <th data-field="phone_number" data-sortable="true">Japanese Phone Number</th>
+    </tr>
+  </thead>
+
+<tbody>
+<% @contacts.each do |contact| %>
+<tr>
+    <td><a href="/contacts/<%= contact.id %>"><%= contact.first_name %></a></td>
+    <td><%= contact.last_name %></td>
+    <td><%= contact.latitude %></td>
+    <td><%= contact.longitude %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.phone_number %></td>
+    <td><%= contact.japanese_prefix %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

@@ -1,0 +1,20 @@
+<h1><a class="btn btn-default" href="#" role="button">Contact: </a></h1>
+
+<h2><%= @contact.full_name %></h2>
+<h2><%= @contact.first_name %></h2>
+<h2><%= @contact.middle_name %></h2>
+<h2><%= @contact.last_name %></h2>
+<h3>Your lat and long are: <%= @contact.latitude %>, <%= @contact.longitude %>, <%= @contact.longitude %></h3>
+<h3><%= @contact.email %></h3>
+<h3><%= @contact.phone_number %></h3>
+<h3><%= @contact.japanese_prefix %></h3>
+<h3><%= @contact.bio %></h3>
+
+
+<h3>Updated at <%= @contact.friendly_time %></h3>
+
+<%= link_to "Edit me", "/contacts/#{@contact.id}/edit" %><br>
+
+<%= link_to "Delete me", "/contacts/#{@contact.id}", :method => :delete, :confirm => "Are you sure ?"%><br>
+
+<%= link_to "Back to all contacts", "/contacts/" %>
