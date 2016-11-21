@@ -912,55 +912,21 @@ end
 
 ###SQL (Structured Query Language)
 - `select first_name from contacts;`
-|Common SQL Queries|
-|---------|-----------|
-|SELECT *
-FROM recipes;| Select all columns from the recipes table |
-|SELECT description, photo
-FROM recipes; | Select only description and photo from recipes table |
-|SELECT *
-FROM recipes
-WHERE name = 'Pizza'; |
-Select all from recipes where name = 'Pizza' |
-|SELECT *
-FROM recipes
-WHERE prep_time > 100 
-AND name = 'Pizza'; |
-Select all from recipes where pre_time > 100 and name ='Pizza' (Use WHERE the first time, then AND for the 2nd, 3rd, etc. times) |
-|SELECT *
-FROM recipes
-WHERE prep_time > 100
-OR name = 'Pizza'; |
-Select all from recipes where pre_time > 100 or name ='Pizza' |
-|SELECT *
-FROM recipes
-ORDER BY prep_time;
-|Select all and order all recipes in ascending order|
-|SELECT *
-FROM recipes
-ORDER BY prep_time DESC;|
-|Select all and order all recipes in descending order|
-|SELECT *
-FROM recipes
-LIMIT 5;|
-|Select the first 5 recipes|
-|SELECT COUNT(*)
-FROM recipes;
-Count the number of recipes|
-|SELECT SUM(prep_time)
-FROM recipes;|
-|Get the sum of all the prep_times from recipes|
-|SELECT AVG(prep_time)
-FROM recipes;|
-|Get the average of all the prep_times from recipes|
-|SELECT * 
-FROM recipes 
-WHERE ingredients LIKE '%bread%';|
-|Select all from recipes where ingredients contains the string 'bread' (case sensitive)|
-|SELECT * 
-FROM recipes 
-WHERE description NOT LIKE '%bake%';|
-Select all from recipes where description doesn’t contain the string 'bake' (case sensitive) |
+
+|  Common SQL Queries |   |
+|---|---|
+|SELECT * FROM recipes;| Select all columns from the recipes table |
+|SELECT description, photo FROM recipes; | Select only description and photo from recipes table |
+|SELECT * FROM recipes WHERE name = 'Pizza'; | Select all from recipes where name = 'Pizza' |
+|SELECT * FROM recipes WHERE prep_time > 100 ND name = 'Pizza'; | Select all from recipes where pre_time > 100 and name ='Pizza' (Use WHERE the first time, then AND for the 2nd, 3rd, etc. times) |
+|SELECT * FROM recipes WHERE prep_time > 100 OR name = 'Pizza'; | Select all from recipes where pre_time > 100 or name ='Pizza' |
+|SELECT * FROM recipes ORDER BY prep_time; | Select all and order all recipes in ascending order|
+|SELECT * FROM recipes ORDER BY prep_time DESC; | Select all and order all recipes in descending order|
+|SELECT * FROM recipes LIMIT 5; | Select the first 5 recipes|
+|SELECT COUNT(*) FROM recipes; Count the number of recipes | SELECT SUM(prep_time) FROM recipes; //Get the sum of all the prep_times from recipes|
+|SELECT AVG(prep_time) FROM recipes; | //Get the average of all the prep_times from recipes|
+|SELECT * FROM recipes WHERE ingredients LIKE '%bread%'; | //Select all from recipes where ingredients contains the string 'bread' (case sensitive)|
+|SELECT * FROM recipes WHERE description NOT LIKE '%bake%'; | Select all from recipes where description doesn’t contain the string 'bake' (case sensitive) |
 
 ###Exercise
 - Use SQL to grab the following data from the employees database:
@@ -1067,4 +1033,3 @@ def index
 ###Divergent vs Convergent Thinking
 - Divergent (How to Create a Search Bar)
 - Convergent (Pick one method and apply)
-
