@@ -1036,6 +1036,9 @@ def index
 
 #Date - 11/21/2016
 ###Relational Databases
+
+|   |   |   |   |
+|---|---|---|---|
 |Products| | | |
 |belongs_to_supplier| | | |
 |id|name|price|supplier_id|
