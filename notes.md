@@ -1006,3 +1006,65 @@ Select all from recipes where description doesn’t contain the string 'bake' (c
 ###Active Record Queries
 - It's simplier, easier and you write in Ruby
 - Comparison of SQL to Active Record in Rails
+
+# Date: 11-20-2016
+
+###Params Review
+
+```ruby
+product.update(
+      name: params["name"], 
+      price: params["price"], 
+      image: params["image"], 
+      description: params["description"], 
+      in_stock: as_bool(params["in_stock"])
+      )
+
+flash[:info] = "Congrats. You updated your product."
+
+redirect_to "/products/#{product.id}"
+```
+
+```ruby
+<!-- Params sorts and searches -->
+def index
+    @title = "All products"
+
+    if params["sort"]
+      @products = Product.order(@sort => @direction)
+    elsif params["discount_item"]
+      @products = Product.where("price < ?", 2)
+    elsif params["search_content"]
+      @products = Product.where("name LIKE ?", "%#{params["search_content"]}%")
+      flash[:search] = "Here is the result of your search:"
+    else
+      @products = Product.all
+    end
+
+    render 'index.html.erb'
+  end
+```
+
+```
+  <!-- application.html.erb form -->
+  <%= form_tag "/products", method: :get, class: "navbar-form navbar-left" do %>
+  <div class="form-group">
+    <%= text_field_tag :search_content, '' , class: "form-control", placeholder: "Enter name of product" %>
+    <%= submit_tag 'Search for an item', class: "btn btn-default" %>
+  </div>
+  <% end %>
+```
+
+```
+  <!-- Print flash message in application.html.erb -->
+  <div class="container>"
+  <% flash.each do |name, message| %>
+  <div class="alert alert-<%= name %>" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= message %></div>
+  <% end %>
+  </div>
+```
+
+###Divergent vs Convergent Thinking
+- Divergent (How to Create a Search Bar)
+- Convergent (Pick one method and apply)
+

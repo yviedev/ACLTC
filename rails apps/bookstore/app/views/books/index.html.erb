@@ -1,0 +1,11 @@
+<h1>Welcome to Barnes & Yvonne</h1>
+
+<% @books.each do |book| %>
+<hr>
+<h3>Book title: <%= book.title %></p>
+<p>Book author: <%= book.author %></p>
+<p>Book price: <%= book.price %></p>
+<p>Book genre: <%= book.genre %></p>
+<p># of pages: <%= book.pages %></p>
+<p>Comes in hardcover? <%= book.hardcover %></p>
+<% end %>

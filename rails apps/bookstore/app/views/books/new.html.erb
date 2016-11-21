@@ -1,0 +1,26 @@
+<h1>Please use this form to add a book</h1>
+
+<%= form_tag "/books", method: :post do %> 
+  <div>
+  <%= label_tag :title %>
+  <%= text_field_tag :title %>
+  </div>
+  <div>
+  <%= label_tag :author %>
+  <%= text_field_tag :author %>
+  </div>
+  <div>
+  <%= label_tag :price %>
+  <%= text_field_tag :price %>
+  </div>
+  <div>
+  <%= label_tag :genre %>
+  <%= text_field_tag :genre %>
+  </div>
+  <div>
+  <%= label_tag :pages %>
+  <%= text_field_tag :pages %>
+  </div>
+  <div>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>

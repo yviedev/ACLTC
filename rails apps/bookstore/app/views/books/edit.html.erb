@@ -1,0 +1,26 @@
+<h1>Please use this form to add a book</h1>
+
+<%= form_tag "/books/#{@book.id}", method: :patch do %> 
+  <div>
+  <%= label_tag :title %>
+  <%= text_field_tag :title, @book.title %>
+  </div>
+  <div>
+  <%= label_tag :author %>
+  <%= text_field_tag :author, @book.author %>
+  </div>
+  <div>
+  <%= label_tag :price %>
+  <%= text_field_tag :price, @book.price %>
+  </div>
+  <div>
+  <%= label_tag :genre %>
+  <%= text_field_tag :genre, @book.genre %>
+  </div>
+  <div>
+  <%= label_tag :pages %>
+  <%= text_field_tag :pages, @book.pages %>
+  </div>
+  <div>
+  <%= submit_tag 'Submit This!!' %>
+<% end %>
