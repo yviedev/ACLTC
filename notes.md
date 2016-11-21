@@ -1033,3 +1033,23 @@ def index
 ###Divergent vs Convergent Thinking
 - Divergent (How to Create a Search Bar)
 - Convergent (Pick one method and apply)
+
+#Date - 11/21/2016
+###Relational Databases
+|Products| | | |
+|belongs_to_supplier| | | |
+|id|name|price|supplier_id|
+| | | | |
+|1|Air Jordans|120|1|
+|2|Flex|89.5|1|
+|3|Revolution|88|1|
+|4|Dual Fustion|105|1|
+|5|Neo Boost|180|2|
+| | | | |
+|Suppliers| | | |
+|has_many_products| | | |
+|id|name|email|phone|
+|1|Nike|info@nike.com|800-555-555|
+|2|Adidas|hey@adidas.net|123-456-7890|
+
+###Has Many Relationships
