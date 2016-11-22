@@ -1055,4 +1055,30 @@ def index
 |1|Nike|info@nike.com|800-555-555|
 |2|Adidas|hey@adidas.net|123-456-7890|
 
-###Has Many Relationships
+###has_many
+
+###join table
+```sql
+SELECT * FROM products
+JOIN products 
+ON suppliers.id=products.supplier_id;
+
+SELECT * FROM products;
+```
+
+- Find supplier name from product
+    * `Supplier.find_by(id: product4.supplier_id).name`
+
+```ruby
+#this method will return the supplier of this product
+def supplier
+    Supplier.find_by(id: supplier_id)
+end
+
+#use has_many and belongs_to instead
+```
+- if you make a new method, you have to exit from the rails console and run again
+- `Product.find(4)`
+- `Product.create!(title: "books")`
+- `belongs_to: supllier'
+- 'has_many: product'
