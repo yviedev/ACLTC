@@ -1136,7 +1136,7 @@ end
 
 //controller
 if session[:count] == nil
-    session[:count]=0
+    session[:count] = 0
 end
 session[:count] += 1
 
@@ -1192,7 +1192,7 @@ session[:count] += 1
 
 
 #Date 11-23-2016
--foreign key: an attribute from another table
+- foreign key: an attribute from another table
 
 ###Authentication helper
 - update application controller (all controller inherit from here)
