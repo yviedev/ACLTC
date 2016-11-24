@@ -1153,36 +1153,42 @@ session[:count] += 1
 - signup: make new User model
 - login: take username && pwd and see if they == each other
 
-    ##Part 1: Authentication sign up (create a new user):
-    1. Create a user model in the terminal:
-        `rails generate model User name email password_digest`
-        `rake db:migrate`
-    2. Add user routes to config/routes.rb:
-        `get '/signup' => 'users#new'`
-        `post '/users' => 'users#create'`
-    3. Create a users controller in the terminal:
-        `rails generate controller Users`
-    4. [Add a new and create action in the users controller:]<https://gist.github.com/peterxjang/128dfbde4e4969a9d1a8c2852940ad24>
-    5. [Add a new view in the app/views/users folder:]<https://gist.github.com/peterxjang/2d2c3429bc895c7c394449eb0884abf0]>
-    6. Uncomment the bcrypt gem in the Gemfile:
-        `gem 'bcrypt', '~> 3.1.7'`
-    7. [Add the method has_secure_password to the user model]<https://gist.github.com/peterxjang/b6cc474c2ead94cc36860001b76ccc15>
-    8.Run bundle install and restart your rails server in the terminal
-        `bundle install`
-        `rails server`
+##Part 1: Authentication sign up (create a new user):
+1. Create a user model in the terminal:
+    `rails generate model User name email password_digest`
+    `rake db:migrate`
+2. Add user routes to config/routes.rb:
+    `get '/signup' => 'users#new'`
+    `post '/users' => 'users#create'`
+3. Create a users controller in the terminal:
+    `rails generate controller Users`
+4. Add a new and create action in the users controller:
+    <https://gist.github.com/peterxjang/128dfbde4e4969a9d1a8c2852940ad24>
+5. Add a new view in the app/views/users folder:
+    <https://gist.github.com/peterxjang/2d2c3429bc895c7c394449eb0884abf0]>
+6. Uncomment the bcrypt gem in the Gemfile:
+    `gem 'bcrypt', '~> 3.1.7'`
+7. Add the method has_secure_password to the user model
+    <https://gist.github.com/peterxjang/b6cc474c2ead94cc36860001b76ccc15>
+8.Run bundle install and restart your rails server in the terminal
+    `bundle install`
+    `rails server`
 
-    ##Part 2: Authentication login and logout (create a new session):
-    1. Add session routes to config/routes.rb:
-        `get '/login' => 'sessions#new'`
-        `post '/login' => 'sessions#create'`
-        `get '/logout' => 'sessions#destroy'`
-    2. Create a sessions controller in the terminal:
-        `rails generate controller Sessions`
-    3. [Add a new, create, and destroy action to the sessions controller:]<https://gist.github.com/peterxjang/5a6b10ccacbee1c35690846a99a09bee>
-    4. [Add a new view in the app/views/sessions folder:]<https://gist.github.com/peterxjang/9cfa3f4f98cc02fcbd32a93f62cafac4>
+##Part 2: Authentication login and logout (create a new session):
+1. Add session routes to config/routes.rb:
+    `get '/login' => 'sessions#new'`
+    `post '/login' => 'sessions#create'`
+    `get '/logout' => 'sessions#destroy'`
+2. Create a sessions controller in the terminal:
+    `rails generate controller Sessions`
+3. Add a new, create, and destroy action to the sessions controller:
+    <https://gist.github.com/peterxjang/5a6b10ccacbee1c35690846a99a09bee>
+4. Add a new view in the app/views/sessions folder:
+    <https://gist.github.com/peterxjang/9cfa3f4f98cc02fcbd32a93f62cafac4>
 
-    ##Part 3: Authentication helpers:
-    1. [Add helper methods in app/controllers/application_controller.rb]<https://gist.github.com/peterxjang/6150846588f6c0de662a23d153daf5c2>
+##Part 3: Authentication helpers:
+1. Add helper methods in app/controllers/application_controller.rb
+    <https://gist.github.com/peterxjang/6150846588f6c0de662a23d153daf5c2>
 
 
 #Date 11-23-2016
