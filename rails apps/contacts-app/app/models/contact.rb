@@ -1,4 +1,7 @@
 class Contact < ApplicationRecord
+  
+  belongs_to :user
+
   def friendly_time
     created_at.strftime("%b %d %y")
   end

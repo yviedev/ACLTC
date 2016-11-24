@@ -1,20 +1,19 @@
-<h1><a class="btn btn-default" href="#" role="button">Contact: </a></h1>
-
-<h2><%= @contact.full_name %></h2>
-<h2><%= @contact.first_name %></h2>
-<h2><%= @contact.middle_name %></h2>
-<h2><%= @contact.last_name %></h2>
-<h3>Your lat and long are: <%= @contact.latitude %>, <%= @contact.longitude %>, <%= @contact.longitude %></h3>
-<h3><%= @contact.email %></h3>
-<h3><%= @contact.phone_number %></h3>
-<h3><%= @contact.japanese_prefix %></h3>
-<h3><%= @contact.bio %></h3>
-
-
-<h3>Updated at <%= @contact.friendly_time %></h3>
-
-<%= link_to "Edit me", "/contacts/#{@contact.id}/edit" %><br>
-
-<%= link_to "Delete me", "/contacts/#{@contact.id}", :method => :delete, :confirm => "Are you sure ?"%><br>
-
-<%= link_to "Back to all contacts", "/contacts/" %>
+<div class="card">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title"><%= @contact.full_name %></h4>
+    <p class="card-text"><%= @contact.first_name %></p>
+    <p class="card-text"><%= @contact.last_name %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Your lat and long are: <%= @contact.latitude %>, <%= @contact.longitude %>, <%= @contact.longitude %></li>
+    <li class="list-group-item"><%= @contact.email %></li>
+    <li class="list-group-item"><%= @contact.phone_number %></li>
+    <li class="list-group-item"><%= @contact.japanese_prefix %></li>
+    <li class="list-group-item"><%= @contact.bio %></li>
+  </ul>
+  <div class="card-block">
+    <a href="/contacts/#{@contact.id}/edit" class="card-link">Edit me</a><br>
+    <a href="/contacts/#{@contact.id}" class="card-link">Delete me</a>
+  </div>
+</div>

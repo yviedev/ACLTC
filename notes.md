@@ -890,7 +890,7 @@ end
             - change_column :products, :price, :decimal, precision: 9, scale: 2
 3. DOUBLE CHECK YOUR MIGRATION FILE CODE
     - If there are typos, you can fix them now before doing the next step
-4. In the terminal, run: rake db:migrate
+4. In the terminal, run: `rake db:migrate`
 5. Shortcuts for steps 1 and 2:
     - To add a column to a table:
         * `rails generate migration AddImageToProducts image:string`
@@ -973,6 +973,38 @@ end
 - It's simplier, easier and you write in Ruby
 - Comparison of SQL to Active Record in Rails
 
+```md
+**Recipe.first**
+Find first recipe in database
+
+**Recipe.last**
+Find last recipe in database
+
+**Recipe.find_by(name: "spaghetti")**
+Find recipe name with "spaghetti" (limit 1)
+
+**Recipe.all.order(:author)**
+Order alphabetically recipes by author in ascending order
+
+**Recipe.all.order(author: :desc)**
+Order alphabetically recipes by author descending order
+
+**Recipe.where(prep_time: 10)**
+Select recipes where prep_time is exactly 10.
+
+**Recipe.where("prep_time > ?", 10)**
+Select recipes where prep_time is greater than 10.
+
+**Recipe.where("chef LIKE ?", "%Ray%")**
+Select recipes where chef contains the string "Ray" (case sensitive for Postgres)
+
+**Recipe.where("chef LIKE ? AND prep_time = ?", "%Ray%", 10)**
+Select only recipes cooked by Ray and the prep_time equals 10.
+
+**Recipe.where("chef LIKE ? OR prep_time = ?", "%Ray%", 10)**
+Select all recipes cooked by Ray or the prep_time equals 10.
+```
+
 # Date: 11-20-2016
 
 ###Params Review
@@ -1034,7 +1066,8 @@ def index
 - Divergent (How to Create a Search Bar)
 - Convergent (Pick one method and apply)
 
-#Date - 11/21/2016
+#Date 11-21-2016
+
 ###Relational Databases
 
 |   |   |   |   |
@@ -1082,3 +1115,89 @@ end
 - `Product.create!(title: "books")`
 - `belongs_to: supllier'
 - 'has_many: product'
+
+#Date 11-22-2016 - Encrytion/Decryption
+
+- password_digest
+    * encrypted password on the database
+- stateless web
+    * view is the same for every user
+    * the web was amde to transfer docs to ppl
+    * limitations
+        - no shopping cart
+- load balancer
+    * device that determines how busy each server is and sends user to least buy server
+- cookies
+    * piece of data sent back and forth from your browser to the database
+
+```ruby
+//index
+<p> You have visited this page <%= @count %> times. </p>
+
+//controller
+if session[:count] == nil
+    session[:count]=0
+end
+session[:count] += 1
+
+@count = session[:count]
+```
+- session is a special cookie variable that doesn't get deleted when the user closes the browser.
+
+### bcrypt (Rails login/signup)
+- ruby gem
+
+###Authentication
+- form to input data to authenticate
+- route that does soem authentication and re-route
+- signup: make new User model
+- login: take username && pwd and see if they == each other
+
+```md
+##Part 1: Authentication sign up (create a new user):
+1. Create a user model in the terminal:
+    `rails generate model User name email password_digest`
+    `rake db:migrate`
+2. Add user routes to config/routes.rb:
+    `get '/signup' => 'users#new'`
+    `post '/users' => 'users#create'`
+3. Create a users controller in the terminal:
+    `rails generate controller Users`
+4. [Add a new and create action in the users controller:]<https://gist.github.com/peterxjang/128dfbde4e4969a9d1a8c2852940ad24>
+5. [Add a new view in the app/views/users folder:]<https://gist.github.com/peterxjang/2d2c3429bc895c7c394449eb0884abf0]>
+6. Uncomment the bcrypt gem in the Gemfile:
+    `gem 'bcrypt', '~> 3.1.7'`
+7. [Add the method has_secure_password to the user model]<https://gist.github.com/peterxjang/b6cc474c2ead94cc36860001b76ccc15>
+8.Run bundle install and restart your rails server in the terminal
+    `bundle install`
+    `rails server`
+
+##Part 2: Authentication login and logout (create a new session):
+1. Add session routes to config/routes.rb:
+    `get '/login' => 'sessions#new'`
+    `post '/login' => 'sessions#create'`
+    `get '/logout' => 'sessions#destroy'`
+2. Create a sessions controller in the terminal:
+    `rails generate controller Sessions`
+3. [Add a new, create, and destroy action to the sessions controller:]<https://gist.github.com/peterxjang/5a6b10ccacbee1c35690846a99a09bee>
+4. [Add a new view in the app/views/sessions folder:]<https://gist.github.com/peterxjang/9cfa3f4f98cc02fcbd32a93f62cafac4>
+
+##Part 3: Authentication helpers:
+1. [Add helper methods in app/controllers/application_controller.rb]<https://gist.github.com/peterxjang/6150846588f6c0de662a23d153daf5c2>
+```
+
+#Date 11-23-2016
+-foreign key: an attribute from another table
+
+###Authentication helper
+- update application controller (all controller inherit from here)
+- use current_user
+
+```ruby
+# instead of
+if session[:user_id] == @contact.user_id
+
+# use
+if @current_user.id == @contact.user_id
+```
+
