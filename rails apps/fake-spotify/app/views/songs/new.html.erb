@@ -1,0 +1,21 @@
+<h1>Please use this form to add a new song:</h1>
+
+<%= form_tag '/songs', method: :post do %>
+  <div>
+  <%= label_tag :title %>
+  <%= text_field_tag :title %>
+  </div>
+  <div>
+  <%= label_tag :artist %>
+  <%= text_field_tag :artist %>
+  </div>
+  <div>
+  <%= label_tag :genre %>
+  <%= text_field_tag :genre %>
+  </div>
+  <div>
+  <%= label_tag :lyrics %>
+  <%= text_field_tag :lyrics %>
+  </div>
+<%= submit_tag 'Submit Song!' %>
+<% end %>
