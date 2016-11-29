@@ -7,4 +7,11 @@ $best_color: blue;
 
 body {
   color: $best_color;
+  background-image: url('congruent_pentagon.png');
+  background-repeat: repeat;
+}
+
+.my-card {
+  width: 30%;
+  
 }

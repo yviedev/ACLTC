@@ -2,6 +2,9 @@ class Contact < ApplicationRecord
   
   belongs_to :user
 
+  has_many :grouped_contacts
+  has_many :groups, through: :grouped_contacts
+
   def friendly_time
     created_at.strftime("%b %d %y")
   end

@@ -5,13 +5,21 @@ class ContactsController < ApplicationController
     @title = "All contacts"
 
     # Only allow users to see their own contacts; users cannot see other users’ contacts.
-    if session[:user_id]
-      @contacts = Contact.where(user_id: session[:user_id])
-      # @contacts = current_user.contacts # shows all current contacts
+    # if session[:user_id]
+    #   @contacts = Contact.where(user_id: session[:user_id])
+    #   # @contacts = current_user.contacts # shows all current contacts
+    # else
+    #   @contacts = Contact.all
+    #   # @contact = [] # to see nothing for users not logged in
+    #   # redirect = '/login'
+    # end
+
+    if current_user && params[:group]
+      group_name = params[:group]
+      group = Group.find_by(name: group_name)
+      @contacts = group.contacts.where(user_id: current_user.id)
     else
       @contacts = Contact.all
-      # @contact = [] # to see nothing for users not logged in
-      # redirect = '/login'
     end
 
     render 'index.html.erb'
