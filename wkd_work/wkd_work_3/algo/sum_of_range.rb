@@ -3,7 +3,17 @@
 # numbers, inclusive.
 
 def sum_of_range(array)
-
+  result = 0
+  if array[0] < array[1]
+    for x in (array[0])..(array[1]) do
+      result += x
+    end
+  else
+    for x in (array[1]..(array[0])) do
+      result += x
+    end
+  end
+  return result
 end
 
 # Driver code - don't touch anything below this line.
