@@ -1,0 +1,11 @@
+<h1>Here are the NYC High School average SAT results from 2012:</h1>
+
+
+<% @highschools.each do |highschool| %>
+  <h2>School name: <%= highschool["school_name"] %></h2>
+  <h3># of students taking SAT: <%= highschool["num_of_sat_test_takers"] %></h3>
+  <h4>Avg SAT writing score: <%= highschool["sat_writing_avg_score"] %></h4>
+  <h4>Avg SAT math score: <%= highschool["sat_math_avg_score"] %></h4>
+  <h4>Avg SAT critical reading score: <%= highschool["sat_critical_reading_avg_score"] %></h4>
+  <hr>
+<% end %>
