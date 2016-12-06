@@ -1,0 +1,24 @@
+<h1>Welcome to my Weather App! - Enter a City and a 2-Letter State:</h1>
+<%= form_tag "/weather", method: :get do %>
+<div>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  <%= label_tag :state %>
+  <%= text_field_tag :state %>
+<%= submit_tag 'Search!!' %>
+</div>
+<% end %>
+<hr> 
+
+<h1>Here is the 5 day forecast in <%= @city %>, <%= @state %>:</h1>
+<% @data["query"]["results"]["channel"]["item"]["forecast"].each_with_index do |weather, index| %>
+  <% if index <= 4 %>
+    <h2>Date: <%= weather["date"] %></h2>
+    <h3>Day: <%= weather["day"] %></h3>
+    <h3>High: <%= weather["high"] %>°F</h3>
+    <h3>Low: <%= weather["low"] %>°F</h3>
+    <h3><%= weather["text"] %></h3>
+    <hr>
+  <% end %>
+<% end %>
+  
