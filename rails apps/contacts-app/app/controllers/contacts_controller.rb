@@ -26,30 +26,16 @@ class ContactsController < ApplicationController
 
   end
 
-  def show
-    @title = "Contact page"
-    @contact = Contact.find_by(id: params["id"])
-
-    # if session id is equal to contact user id, show page
-    # if session[:user_id] == @contact.user_id
-    if current_user.id == @contact.user_id
-      render 'show.html.erb'
-    else
-    # else give error "You don't have permission to view this contact and redirect to index
-      flash[:warning] = "You don't have permission to view this contact."
-      redirect_to '/contacts'
-    end
-  end
-
   def new
     @title = "New contact"
+    @contact = Contact.new
     render 'new.html.erb'
   end
 
   def create
     @title = "Created contact"
     coordinates = Geocoder.coordinates(params["address"])
-    contact = Contact.new(
+    @contact = Contact.new(
       first_name: params["first_name"],
       middle_name: params["middle_name"],
       last_name: params["last_name"],
@@ -61,10 +47,14 @@ class ContactsController < ApplicationController
       longitude: coordinates[1],
       user_id: current_user.id
       )
-    contact.save
-    flash[:success] = "Congrats. You made a new contact."
-    redirect_to "/contacts/#{contact.id}"
-    #render 'create.html.erb'
+
+    if @contact.save
+      flash[:success] = "Congrats. You made a new contact."
+      redirect_to "/contacts/#{@contact.id}"
+    else
+      render 'new.html.erb'
+    end
+
   end
 
   def edit
@@ -74,6 +64,21 @@ class ContactsController < ApplicationController
     # if session id is equal to contact user id, show page
     if current_user.id == @contact.user_id
       render 'edit.html.erb'
+    else
+    # else give error "You don't have permission to view this contact and redirect to index
+      flash[:warning] = "You don't have permission to view this contact."
+      redirect_to '/contacts'
+    end
+  end
+
+  def show
+    @title = "Contact page"
+    @contact = Contact.find_by(id: params["id"])
+
+    # if session id is equal to contact user id, show page
+    # if session[:user_id] == @contact.user_id
+    if current_user.id == @contact.user_id
+      render 'show.html.erb'
     else
     # else give error "You don't have permission to view this contact and redirect to index
       flash[:warning] = "You don't have permission to view this contact."
@@ -94,7 +99,8 @@ class ContactsController < ApplicationController
       bio: params["bio"], 
       address: params["address"],
       latitude: coordinates[0],
-      longitude: coordinates[1])
+      longitude: coordinates[1]
+      )
 
     flash[:info] = "Congrats. You updated your contact."
     redirect_to "/contacts/#{contact.id}"

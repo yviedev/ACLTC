@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  genre: MyString
+  age: 1
+  years_of_acting: 1
+  number_of_films: 1
+  highest_grossing_salary: 1
+
+two:
+  name: MyString
+  genre: MyString
+  age: 1
+  years_of_acting: 1
+  number_of_films: 1
+  highest_grossing_salary: 1

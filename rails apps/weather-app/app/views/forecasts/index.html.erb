@@ -1,0 +1,22 @@
+<h1>Welcome to my Weather App! - Please enter the WOEID for the weather location of your choice:</h1>
+<h2>You can find your location WOEID <a href="http://woeid.rosselliot.co.nz/" target="_blank">here</a>:</h2>
+<%= form_tag "/weather", method: :get do %>
+<div>
+  <%= label_tag :woeid %>
+  <%= text_field_tag :woeid %>
+<%= submit_tag 'Search!!' %>
+</div>
+<% end %>
+<hr>
+
+<% if @weather %>
+<h1><%= @weather.title %></h1>
+
+<% @weather.forecasts.each do |forecast| %>
+  <h2>Day: <%= forecast.day %></h2>
+  <h3>Low: <%= forecast.low %>°F</h3>
+  <h3>High: <%= forecast.high %>°F</h3>
+  <h3>Details: <%= forecast.text %></h3>
+  <hr>
+<% end %>
+<% end %>
