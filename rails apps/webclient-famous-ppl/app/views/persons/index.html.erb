@@ -1,0 +1,10 @@
+<h1>Here are all of the Famous People</h1>
+
+<% @persons.each do |person| %>
+<h3>Name: <a href="/famouspeople/<%= person.id %>"><%= person.name %></a></h3>
+<p>Genre: <%= person.genre %></p>
+<p>Age: <%= person.age %></p>
+<p>Years of Acting: <%= person.years_of_acting %></p>
+<p>Number of Films: <%= person.number_of_films %></p>
+<p>Highest Grossing Salary: <%= number_to_currency person.highest_grossing_salary %></p>
+<% end %>

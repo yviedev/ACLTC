@@ -1,0 +1,25 @@
+<h1>Add a New Famous Person Here:</h1>
+
+<%= form_tag "/famouspeople", method: :post do %>
+<div>
+    <%= label_tag :Famous_Person_Name %>
+    <%= text_field_tag :form_name %>
+</div>
+<div>
+    <%= label_tag :Genre %>
+    <%= text_field_tag :form_genre %>
+</div>
+<div>
+    <%= label_tag :Age %>
+    <%= text_field_tag :form_age %>
+</div>
+<div>
+    <%= label_tag :Years_of_Acting %>
+    <%= text_field_tag :form_years_of_acting %>
+</div>
+<div>
+    <%= label_tag :Highest_Grossing_Salary %>
+    <%= text_field_tag :form_highest_grossing_salary %>
+</div>
+<%= submit_tag "Add Famous Person!" %>
+<% end %>

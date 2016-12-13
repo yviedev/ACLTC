@@ -1,4 +1,4 @@
-class PersonsController < ApplicationController
+class Api::V2::PersonsController < ApplicationController
   def index
     @title = "All Famous People"
     @people = Person.all

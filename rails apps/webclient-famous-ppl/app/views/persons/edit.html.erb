@@ -1,0 +1,25 @@
+<h1>Edit Your Famous Person Here:</h1>
+
+<%= form_tag "/famouspeople/#{params[:id]}", method: :patch do %>
+<div>
+  <%= label_tag :Famous_Person_Name %>
+  <%= text_field_tag :form_name, @person.name %>
+</div>
+<div>
+    <%= label_tag :Genre %>
+    <%= text_field_tag :form_genre, @person.genre %>
+</div>
+<div>
+    <%= label_tag :Age %>
+    <%= text_field_tag :form_age, @person.age %>
+</div>
+<div>
+    <%= label_tag :Years_of_Acting %>
+    <%= text_field_tag :form_years_of_acting, @person.years_of_acting %>
+</div>
+<div>
+    <%= label_tag :Highest_Grossing_Salary %>
+    <%= text_field_tag :form_highest_grossing_salary, @person.highest_grossing_salary %>
+</div>
+<%= submit_tag "Edit Famous Person!" %>
+<% end %>
