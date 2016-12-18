@@ -20,15 +20,15 @@ class PersonsController < ApplicationController
   def create
     @title = "Famous Person Created"
     @person = Person.create(
-      id: params[:id],
       name: params[:form_name],
       genre: params[:form_genre],
       age: params[:form_age],
       years_of_acting: params[:form_years_of_acting],
+      number_of_films: params[:number_of_films],
       highest_grossing_salary: params[:form_highest_grossing_salary]
     )
 
-    redirect_to "/famouspeople/#{params[:id]}"
+    redirect_to "/famouspeople/#{@person.id}"
   end
 
   def edit
@@ -46,16 +46,19 @@ class PersonsController < ApplicationController
       genre: params[:form_genre],
       age: params[:form_age],
       years_of_acting: params[:form_years_of_acting],
+      number_of_films: params[:number_of_films],
       highest_grossing_salary: params[:form_highest_grossing_salary]
     )
 
-    redirect_to "/famouspeople/#{params[:id]}"
+    redirect_to "/famouspeople/#{@person.id}"
   end
 
   def destroy
     @title = "Delete Famous Person"
-    @person = Person.find(params[:id])
-    @person.destroy
+    person = Person.find(params[:id])
+    person.destroy
+
+    redirect_to "/famouspeople"
   end
 
 end

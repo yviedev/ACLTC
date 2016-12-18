@@ -8,6 +8,6 @@
 <p>Highest Grossing Salary: <%= number_to_currency @person.highest_grossing_salary %></p>
 <hr>
 
-<%= link_to "Edit me", "/famouspeople/#{params[:id]}/edit" %><br>
-<%= link_to "Delete me", "/famouspeople/#{params[:id]}", :method => :delete %><br>
+<%= link_to "Edit me", "/famouspeople/#{@person.id}/edit" %><br>
+<%= link_to "Delete me", "/famouspeople/#{@person.id}", :method => :delete %><br>
 <%= link_to "Back to All Famous People", "/famouspeople" %>
