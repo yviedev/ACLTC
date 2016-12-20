@@ -1,0 +1,17 @@
+<h1>Angular</h1>
+
+<div ng-app="app">
+  {{ 1 + 1 }}
+  {{ 2 + 1 }}
+  <div ng-controller = 'stuffCtrl'>
+    {{ message }}
+    <div ng-repeat="newMessage in messages track by $index">
+      <!-- <p><input ng-model="newMessage"</p> -->
+        <p>{{newMessage}}</p>
+    </div>
+
+    <p><input ng-model="newTask"></p>
+    <button ng-click="addTaskToMessages(newTask)">Add Task</button>
+
+  </div>
+</div>
