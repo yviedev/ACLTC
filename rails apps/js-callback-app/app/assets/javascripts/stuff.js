@@ -1,3 +1,24 @@
+function changeColorOfText(theDiv){
+  console.log("Change color!");
+  if (theDiv.style.color == "lightgrey") {
+    theDiv.style.color = "black";
+  }
+  else {
+    theDiv.style.color = "lightgrey";
+  }
+}
+
+function onlyBrooklyn(){
+  console.log("Hi");
+  var dob = document.querySelectorAll('.dob');
+  console.log(dob);
+  for (var i = 0; i<dob.length; i++) {
+    if (dob[i].innerHTML.indexOf("CLOSED") === -1); {
+      dob[i].style.display = "none";
+    }
+  }
+}
+
 function showInfo(){
   var information = document.getElementById('information');
     information.innerHTML = "Loading...";
@@ -9,9 +30,11 @@ function showInfo(){
 
   var newHTML = "";
     for (var i=0; i<infoArray.length; i++) {
+      newHTML += '<div class="dob" onclick="changeColorOfText(this)">';
       newHTML += '<h3>' + infoArray[i].currentstatus + '</h3>';
-      newHTML += '<p>' + infoArray[i].boro + '</p>';
+      newHTML += '<p>' + infoArray[i].dob + '</p>';
       newHTML += '<p>' + infoArray[i].streetname + '</p>';
+      newHTML += '</div>';
     }
   information.innerHTML = newHTML;
   console.log(newHTML);
